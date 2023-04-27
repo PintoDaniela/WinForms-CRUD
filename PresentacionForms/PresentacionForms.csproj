@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AltaItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaItemsForm.designer.cs">
+      <DependentUpon>AltaItemsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AltaItemsForm.resx">
+      <DependentUpon>AltaItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
     </EmbeddedResource>
