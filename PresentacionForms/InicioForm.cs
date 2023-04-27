@@ -61,6 +61,16 @@ namespace PresentacionForms
         {
             Action toggleSubMenuFiltro = () => submenuFiltro.Visible = !submenuFiltro.Visible;
             toggleSubMenuFiltro();
+
+            int alturaFiltro = submenuFiltro.Height;
+            if (submenuFiltro.Visible)
+            {
+                panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y + alturaFiltro);
+            }
+            else
+            {
+                panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y - alturaFiltro);
+            }
         }
     }
 }
