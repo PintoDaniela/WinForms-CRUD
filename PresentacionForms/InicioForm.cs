@@ -72,5 +72,11 @@ namespace PresentacionForms
                 panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y - alturaFiltro);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AltaItemsForm ventana = new AltaItemsForm();
+            ventana.ShowDialog();
+        }
     }
 }
