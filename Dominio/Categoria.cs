@@ -9,10 +9,7 @@ namespace Dominio
     public class Categoria
     {
         public int Id { set; get; }
-
         public string Nombre { set; get; }
-
-        public string Name { set; get; }
 
     }
 }
