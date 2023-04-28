@@ -175,7 +175,7 @@
   <data name="PicBoxCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAH2
-        pgAB9qYBH4yYQgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAB1TSURBVHhe7d1r
+        pAAB9qQBYHJbywAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAB1TSURBVHhe7d1r
         rHX5QdfxTmVKpxqBltLLVIqipFVjBiYBJjVRGhLjC31DwlsCvmp40eArExptIpE04i3cTJ3UKAgmBlAE
         y/1mYkEIpaXTMq2tUqStDahRLlPozONvPa412Wc/66yzr2v9L5+QT0L3c84+e+/1X+f3bWfaecG9e/eu
         7pGHH/mi+Nr4xvi2+L54V/y3+FTcA4CODNv36/Hz8f3x7TFs5NfF6+a29NJmHzxXXvxD8WXx9+L9Mffm
@@ -304,7 +304,4 @@
         UCn/YWkgAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
