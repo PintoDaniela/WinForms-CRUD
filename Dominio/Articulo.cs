@@ -9,18 +9,19 @@ namespace Dominio
 {
     public class Articulo
     {
-        public int id { set; get; }
-        public string name { set; get; }
-        public string descripcion { set; get; }
-        public float precio { set; get; }
-        public Marca marca { set; get; }
-        public Categoria categoria { set; get; }
-        public string urlImagen { set; get; }
-        public bool estado { set; get; }
+        public int Id { set; get; }
+        public string Codigo { set; get; }
+        public string Nombre { set; get; }
+        public string Descripcion { set; get; }
+        public float Precio { set; get; }
+        public Marca Marca { set; get; }
+        public Categoria Categoria { set; get; }
+        public Imagen Imagen { set; get; }
+        public bool Estado { set; get; }
 
         public Articulo()
         {
-            estado = true;
+            Estado = true;
         }
     }
 }
