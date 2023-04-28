@@ -30,6 +30,7 @@ namespace Negocio
 
                 while (lector.Read())
                 {
+
                     Articulo aux = new Articulo();
                     aux.Id = lector.GetInt32(0);
                     aux.Codigo = (string)lector["Codigo"];
@@ -41,6 +42,7 @@ namespace Negocio
                     aux.Marca.Nombre = (string)lector["Marca"];                   
                     Imagen img = new Imagen();
                     aux.Imagen.UrlImagen = (string)lector["Imagen"];
+
 
                     lista.Add(aux);                    
                 }
