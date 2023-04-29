@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices; // para poder mover la ventana
 
+using Negocio;
+using Dominio;
 
 namespace PresentacionForms
 {
@@ -82,6 +84,19 @@ namespace PresentacionForms
         {
             AltaItemsForm ventana = new AltaItemsForm();
             ventana.ShowDialog();
+        }
+        
+
+        private void InicioForm_Load(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            DgvListaPrincipal.DataSource = negocio.listar();
+
+        }
+
+        private void PanelSuperior_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

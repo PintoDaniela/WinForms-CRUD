@@ -37,9 +37,9 @@ namespace Negocio
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Precio = (decimal)lector["Precio"];
                     aux.Descripcion = (string)lector["Descripcion"];
-                    Categoria categoria = new Categoria();
-                    aux.Categoria.Descripcion = (string)lector["Categoria"];
-                    Marca marca = new Marca();
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Descripcion = (string)lector["Categoria"];                    
+                    aux.Marca = new Marca();
                     aux.Marca.Descripcion = (string)lector["Marca"];                   
 
                     lista.Add(aux);                    
