@@ -91,12 +91,22 @@ namespace PresentacionForms
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             DgvListaPrincipal.DataSource = negocio.listar();
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+            picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
 
         }
 
         private void PanelSuperior_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void DgvListaPrincipal_SelectionChanged(object sender, EventArgs e)
+        {
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+            picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
         }
     }
 }
