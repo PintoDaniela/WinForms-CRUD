@@ -22,7 +22,7 @@ namespace Negocio
             {
                 conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.Id,  A.Codigo, A.Nombre, A.Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca, I.ImagenUrl as Imagen FROM ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id AND A.Id = I.IdArticulo";
+                comando.CommandText = "SELECT A.Id,  A.Codigo, A.Nombre, A.Precio, A.Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -35,14 +35,12 @@ namespace Negocio
                     aux.Id = lector.GetInt32(0);
                     aux.Codigo = (string)lector["Codigo"];
                     aux.Nombre = (string)lector["Nombre"];
+                    aux.Precio = (decimal)lector["Precio"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     Categoria categoria = new Categoria();
                     aux.Categoria.Descripcion = (string)lector["Categoria"];
                     Marca marca = new Marca();
                     aux.Marca.Descripcion = (string)lector["Marca"];                   
-                    Imagen img = new Imagen();
-                    //aux.Imagen.UrlImagen = (string)lector["Imagen"];
-
 
                     lista.Add(aux);                    
                 }
@@ -63,10 +61,11 @@ namespace Negocio
         public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();    
-
+            //arreglar esto
+            
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria)values(" + nuevo.Codigo + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Precio+ "', '" +)");
+               // datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria)values(" + nuevo.Codigo + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Precio+ "', '" +)");
                 datos.setearParametro("@IdMarca", nuevo.Marca.Id);
                 datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
                 datos.ejecutarLectura();

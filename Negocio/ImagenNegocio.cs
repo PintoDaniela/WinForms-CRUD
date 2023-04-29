@@ -9,20 +9,20 @@ namespace Negocio
 {
     public class ImagenNegocio
     {
-        public List<Imagen> listar()
+        public List<Imagen> listar(int idArticulo)
         {
             List<Imagen> lista = new List<Imagen>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select Id, IdArticulo, UrlImagen from Imagenes");
+                datos.setearConsulta("select Id, UrlImagen from Imagenes where idArticulo = "+idArticulo);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Imagen aux = new Imagen();
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.IdArticulo = (int)datos.Lector["IdArticulo"];
+                    aux.IdArticulo = idArticulo;
                     aux.UrlImagen = (string)datos.Lector["UrlImagen"];
 
                     lista.Add(aux);
