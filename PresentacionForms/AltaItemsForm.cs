@@ -71,7 +71,7 @@ namespace PresentacionForms
 
                     //Agregar Imagen desde cbox a base de datos 
                     Imagen imgaux = new Imagen();
-                    imgaux.UrlImagen = (string)tbxImagenURL.Text;
+                    imgaux.ImagenUrl = (string)tbxImagenURL.Text;
                     imgaux.IdArticulo = articulo.Id;
                     imagenes.agregar(imgaux);
                    

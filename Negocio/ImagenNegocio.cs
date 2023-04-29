@@ -15,15 +15,15 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("select Id, UrlImagen from Imagenes where idArticulo = "+idArticulo);
+                datos.setearConsulta("select Id, IdArticulo, ImagenUrl from Imagenes where idArticulo = " + idArticulo);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Imagen aux = new Imagen();
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.IdArticulo = idArticulo;
-                    aux.UrlImagen = (string)datos.Lector["UrlImagen"];
+                    aux.IdArticulo = (int)datos.Lector["IdArticulo"];
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
@@ -46,8 +46,8 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string valores = "values('" + nuevo.IdArticulo + "', '" + nuevo.UrlImagen + "')";
-                datos.setearConsulta("insert into Imagenes (IdArticulo, UrlImagen)" + valores);
+                string valores = "values('" + nuevo.IdArticulo + "', '" + nuevo.ImagenUrl + "')";
+                datos.setearConsulta("insert into Imagenes (IdArticulo, ImagenUrl)" + valores);
                 datos.ejecutarLectura();
             }
             catch (Exception ex)
@@ -61,9 +61,9 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("update Imagenes set IdArticulo = @IdArticulo, UrlImagen = @UrlImagen where Id = @Id");
+                datos.setearConsulta("update Imagenes set IdArticulo = @IdArticulo, ImagenUrl = @UrlImagen where Id = @Id");
                 datos.setearParametro("@IdArticulo", nuevo.IdArticulo);
-                datos.setearParametro("@UrlImagen", nuevo.UrlImagen);
+                datos.setearParametro("@ImagenUrl", nuevo.ImagenUrl);
                 datos.setearParametro("@Id", nuevo.Id);
                 datos.ejecutarLectura();
             }
