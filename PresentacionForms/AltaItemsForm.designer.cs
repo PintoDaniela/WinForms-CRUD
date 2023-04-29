@@ -48,6 +48,8 @@
             this.lbImagenURL = new System.Windows.Forms.Label();
             this.tbxImagenURL = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbCodigo = new System.Windows.Forms.Label();
+            this.txbCodigo = new System.Windows.Forms.TextBox();
             this.panelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).BeginInit();
@@ -125,7 +127,7 @@
             this.panelSup.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSup.Location = new System.Drawing.Point(0, 0);
             this.panelSup.Name = "panelSup";
-            this.panelSup.Size = new System.Drawing.Size(748, 21);
+            this.panelSup.Size = new System.Drawing.Size(771, 21);
             this.panelSup.TabIndex = 4;
             // 
             // picBoxMinimizar
@@ -133,7 +135,7 @@
             this.picBoxMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBoxMinimizar.Image")));
-            this.picBoxMinimizar.Location = new System.Drawing.Point(699, 3);
+            this.picBoxMinimizar.Location = new System.Drawing.Point(722, 3);
             this.picBoxMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.picBoxMinimizar.Name = "picBoxMinimizar";
             this.picBoxMinimizar.Size = new System.Drawing.Size(17, 16);
@@ -147,7 +149,7 @@
             this.PicBoxCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PicBoxCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicBoxCerrar.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxCerrar.Image")));
-            this.PicBoxCerrar.Location = new System.Drawing.Point(720, 3);
+            this.PicBoxCerrar.Location = new System.Drawing.Point(743, 3);
             this.PicBoxCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.PicBoxCerrar.Name = "PicBoxCerrar";
             this.PicBoxCerrar.Size = new System.Drawing.Size(17, 16);
@@ -161,7 +163,7 @@
             this.btAgregar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(100)))), ((int)(((byte)(170)))));
             this.btAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAgregar.Location = new System.Drawing.Point(97, 467);
+            this.btAgregar.Location = new System.Drawing.Point(97, 514);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(115, 37);
             this.btAgregar.TabIndex = 7;
@@ -219,7 +221,7 @@
             this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(100)))), ((int)(((byte)(170)))));
             this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCancelar.Location = new System.Drawing.Point(235, 467);
+            this.btCancelar.Location = new System.Drawing.Point(235, 514);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(115, 37);
             this.btCancelar.TabIndex = 8;
@@ -266,13 +268,36 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // lbCodigo
+            // 
+            this.lbCodigo.AutoSize = true;
+            this.lbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbCodigo.Location = new System.Drawing.Point(30, 415);
+            this.lbCodigo.Name = "lbCodigo";
+            this.lbCodigo.Size = new System.Drawing.Size(56, 17);
+            this.lbCodigo.TabIndex = 13;
+            this.lbCodigo.Text = "Codigo:";
+            this.lbCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txbCodigo
+            // 
+            this.txbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txbCodigo.Location = new System.Drawing.Point(136, 412);
+            this.txbCodigo.MaxLength = 20;
+            this.txbCodigo.Name = "txbCodigo";
+            this.txbCodigo.Size = new System.Drawing.Size(162, 23);
+            this.txbCodigo.TabIndex = 14;
+            // 
             // AltaItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(113)))));
             this.CancelButton = this.btCancelar;
-            this.ClientSize = new System.Drawing.Size(748, 560);
+            this.ClientSize = new System.Drawing.Size(771, 654);
+            this.Controls.Add(this.txbCodigo);
+            this.Controls.Add(this.lbCodigo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tbxImagenURL);
             this.Controls.Add(this.lbImagenURL);
@@ -328,5 +353,7 @@
         private System.Windows.Forms.Label lbImagenURL;
         private System.Windows.Forms.TextBox tbxImagenURL;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbCodigo;
+        private System.Windows.Forms.TextBox txbCodigo;
     }
 }

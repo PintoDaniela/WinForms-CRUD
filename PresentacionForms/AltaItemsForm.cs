@@ -52,7 +52,7 @@ namespace PresentacionForms
                 if (articulo == null)
                     articulo = new Articulo();
 
-                //articulo.Codigo = (string)txbCodigo.Text;
+                articulo.Codigo = (string)txbCodigo.Text;
                 articulo.Nombre = (string)txbNombre.Text;
                 articulo.Descripcion = (string)txbDescripcion.Text;
                 articulo.Precio = decimal.Parse(txbPrecio.Text);

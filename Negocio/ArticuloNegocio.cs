@@ -61,8 +61,7 @@ namespace Negocio
         public void Agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();    
-            //arreglar esto
-            
+             
             try
             {
                 datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria)values(" + nuevo.Codigo + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Precio+ "', '" +nuevo.Marca.Id+ "', '"+nuevo.Categoria.Id+"')");
