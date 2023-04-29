@@ -23,7 +23,7 @@ namespace Negocio
                     Imagen aux = new Imagen();
                     aux.Id = (int)datos.Lector["Id"];
                     aux.IdArticulo = idArticulo;
-                    aux.UrlImagen = (string)datos.Lector["UrlImagen"];
+                    aux.ImagenUrl = (string)datos.Lector["UrlImagen"];
 
                     lista.Add(aux);
                 }
@@ -46,7 +46,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string valores = "values('" + nuevo.IdArticulo + "', '" + nuevo.UrlImagen + "')";
+                string valores = "values('" + nuevo.IdArticulo + "', '" + nuevo.ImagenUrl + "')";
                 datos.setearConsulta("insert into Imagenes (IdArticulo, UrlImagen)" + valores);
                 datos.ejecutarLectura();
             }
@@ -63,7 +63,7 @@ namespace Negocio
             {
                 datos.setearConsulta("update Imagenes set IdArticulo = @IdArticulo, UrlImagen = @UrlImagen where Id = @Id");
                 datos.setearParametro("@IdArticulo", nuevo.IdArticulo);
-                datos.setearParametro("@UrlImagen", nuevo.UrlImagen);
+                datos.setearParametro("@UrlImagen", nuevo.ImagenUrl);
                 datos.setearParametro("@Id", nuevo.Id);
                 datos.ejecutarLectura();
             }
