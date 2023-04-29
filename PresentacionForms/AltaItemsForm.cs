@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace PresentacionForms
         public AltaItemsForm()
         {
             InitializeComponent();
+            Load();
+        }
+        private void Load()
+        {
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            cbxCategoria.DataSource = categoriaNegocio.Listar();
         }
 
         private void picBoxMinimizar_Click(object sender, EventArgs e)

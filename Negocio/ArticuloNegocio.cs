@@ -37,11 +37,11 @@ namespace Negocio
                     aux.Nombre = (string)lector["Nombre"];
                     aux.Descripcion = (string)lector["Descripcion"];
                     Categoria categoria = new Categoria();
-                    aux.Categoria.Nombre = (string)lector["Categoria"];
+                    aux.Categoria.Descripcion = (string)lector["Categoria"];
                     Marca marca = new Marca();
-                    aux.Marca.Nombre = (string)lector["Marca"];                   
+                    aux.Marca.Descripcion = (string)lector["Marca"];                   
                     Imagen img = new Imagen();
-                    aux.Imagen.UrlImagen = (string)lector["Imagen"];
+                    //aux.Imagen.UrlImagen = (string)lector["Imagen"];
 
 
                     lista.Add(aux);                    

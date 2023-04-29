@@ -24,8 +24,13 @@ namespace PresentacionForms
         
         public InicioForm()
         {
+            //Load();
             InitializeComponent();
         }
+        //private void Load()
+        //{
+            
+        //}
 
         private void PicBoxCerrar_Click(object sender, EventArgs e)
         {
