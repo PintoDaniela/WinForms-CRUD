@@ -167,6 +167,7 @@
             this.btAgregar.TabIndex = 7;
             this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = false;
+            this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
             // 
             // lbMarca
             // 

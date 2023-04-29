@@ -20,7 +20,7 @@ namespace Negocio
 
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=.\\SQLLOCAL; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "SELECT A.Id,  A.Codigo, A.Nombre, A.Precio, A.Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id";
                 comando.Connection = conexion;
@@ -58,16 +58,14 @@ namespace Negocio
         }
 
 
-        public void agregar(Articulo nuevo)
+        public void Agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();    
             //arreglar esto
             
             try
             {
-               // datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria)values(" + nuevo.Codigo + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Precio+ "', '" +)");
-                datos.setearParametro("@IdMarca", nuevo.Marca.Id);
-                datos.setearParametro("@IdCategoria", nuevo.Categoria.Id);
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria)values(" + nuevo.Codigo + ", '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', '" + nuevo.Precio+ "', '" +nuevo.Marca.Id+ "', '"+nuevo.Categoria.Id+"')");
                 datos.ejecutarLectura();
             }
             catch (Exception ex)
@@ -80,5 +78,12 @@ namespace Negocio
             }
         }
 
+
+        //public void AgregarImagen
+
+        //public void Modificar(Articulo nuevo) { }
+        
+
+        //public void Elminar(Articulo nuevo) { }
     }
 }
