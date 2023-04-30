@@ -48,7 +48,6 @@ namespace Negocio
                 datos.cerrarConexion();
             }
 
-
         }
 
 
@@ -71,12 +70,34 @@ namespace Negocio
             }
         }
 
-
-
         //public void AgregarImagen
 
-        //public void Modificar(Articulo nuevo) { }
-        
+        public void Modificar(Articulo articulo) 
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @desc, Precio = @precio, IdMarca = @idMarca, IdCategoria = @idCategoria Where Id = @id");
+                datos.setearParametro("@codigo", articulo.Codigo);
+                datos.setearParametro("@nombre", articulo.Nombre);
+                datos.setearParametro("@desc", articulo.Descripcion);
+                datos.setearParametro("@precio", articulo.Precio);
+                datos.setearParametro("@idMarca", articulo.Marca.Id);
+                datos.setearParametro("@idCategoria", articulo.Categoria.Id);
+                datos.setearParametro("@id", articulo.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }        
 
         //public void Elminar(Articulo nuevo) { }
     }
