@@ -20,11 +20,7 @@ namespace Negocio
         //Constructor(establece la conexion)
         public AccesoDatos()
         {
-<<<<<<< HEAD
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
-=======
-            conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=CATALOGO_P3_DB;Integrated Security=True");
->>>>>>> a133c48b8a91de71ad13bbb5e9b0a6738ebc4d91
+            conexion = new SqlConnection("server=.\\SQLLOCAL; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 

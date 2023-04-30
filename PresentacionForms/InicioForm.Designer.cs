@@ -503,20 +503,12 @@
             this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-<<<<<<< HEAD
-            this.picImagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.picImagen.Location = new System.Drawing.Point(516, 21);
-            this.picImagen.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(183, 162);
-=======
             this.picImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picImagen.ErrorImage")));
             this.picImagen.Location = new System.Drawing.Point(774, 32);
             this.picImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picImagen.Name = "picImagen";
             this.picImagen.Size = new System.Drawing.Size(274, 249);
             this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
->>>>>>> a133c48b8a91de71ad13bbb5e9b0a6738ebc4d91
             this.picImagen.TabIndex = 1;
             this.picImagen.TabStop = false;
             // 
