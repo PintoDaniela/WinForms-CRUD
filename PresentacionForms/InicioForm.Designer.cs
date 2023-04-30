@@ -64,6 +64,7 @@
             this.DgvListaPrincipal = new System.Windows.Forms.DataGridView();
             this.btnAtrasImagen = new System.Windows.Forms.Button();
             this.btnAdelanteImagen = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.PanelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRestaurar)).BeginInit();
@@ -75,6 +76,7 @@
             this.panelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaPrincipal)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelSuperior
@@ -474,8 +476,7 @@
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(113)))));
-            this.panelPrincipal.Controls.Add(this.btnAdelanteImagen);
-            this.panelPrincipal.Controls.Add(this.btnAtrasImagen);
+            this.panelPrincipal.Controls.Add(this.panel8);
             this.panelPrincipal.Controls.Add(this.txtMostrarDescripcion);
             this.panelPrincipal.Controls.Add(this.picImagen);
             this.panelPrincipal.Controls.Add(this.DgvListaPrincipal);
@@ -532,23 +533,47 @@
             // 
             // btnAtrasImagen
             // 
-            this.btnAtrasImagen.Location = new System.Drawing.Point(856, 305);
+            this.btnAtrasImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAtrasImagen.FlatAppearance.BorderSize = 0;
+            this.btnAtrasImagen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(100)))), ((int)(((byte)(170)))));
+            this.btnAtrasImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtrasImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnAtrasImagen.Image")));
+            this.btnAtrasImagen.Location = new System.Drawing.Point(77, 16);
             this.btnAtrasImagen.Name = "btnAtrasImagen";
             this.btnAtrasImagen.Size = new System.Drawing.Size(48, 49);
             this.btnAtrasImagen.TabIndex = 3;
-            this.btnAtrasImagen.Text = "<-";
             this.btnAtrasImagen.UseVisualStyleBackColor = true;
             this.btnAtrasImagen.Click += new System.EventHandler(this.btnAtrasImagen_Click);
             // 
             // btnAdelanteImagen
             // 
-            this.btnAdelanteImagen.Location = new System.Drawing.Point(931, 305);
+            this.btnAdelanteImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdelanteImagen.FlatAppearance.BorderSize = 0;
+            this.btnAdelanteImagen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(100)))), ((int)(((byte)(170)))));
+            this.btnAdelanteImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdelanteImagen.Image = ((System.Drawing.Image)(resources.GetObject("btnAdelanteImagen.Image")));
+            this.btnAdelanteImagen.Location = new System.Drawing.Point(157, 16);
             this.btnAdelanteImagen.Name = "btnAdelanteImagen";
             this.btnAdelanteImagen.Size = new System.Drawing.Size(48, 49);
             this.btnAdelanteImagen.TabIndex = 4;
-            this.btnAdelanteImagen.Text = "->";
             this.btnAdelanteImagen.UseVisualStyleBackColor = true;
             this.btnAdelanteImagen.Click += new System.EventHandler(this.btnAdelanteImagen_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.Controls.Add(this.btnAdelanteImagen);
+            this.panel8.Controls.Add(this.btnAtrasImagen);
+            this.panel8.Location = new System.Drawing.Point(775, 299);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(285, 84);
+            this.panel8.TabIndex = 5;
             // 
             // InicioForm
             // 
@@ -577,6 +602,7 @@
             this.panelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaPrincipal)).EndInit();
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -618,6 +644,7 @@
         private System.Windows.Forms.PictureBox picImagen;
         private System.Windows.Forms.Button btnAdelanteImagen;
         private System.Windows.Forms.Button btnAtrasImagen;
+        private System.Windows.Forms.Panel panel8;
     }
 }
 
