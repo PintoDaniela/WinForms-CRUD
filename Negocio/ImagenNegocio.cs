@@ -52,7 +52,7 @@ namespace Negocio
                 datos.ejecutarLectura();
             }
             catch (Exception ex)
-            {
+            {   
                 throw ex;
             }
         }

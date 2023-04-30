@@ -44,7 +44,7 @@ namespace PresentacionForms
                 //Muestro en los controles, los valores que tiene actualmente el objeto
                 txbNombre.Text = articulo.Nombre;
                 txbPrecio.Text = articulo.Precio.ToString();
-                //Ver si toma bien la marca o hay que corregir el Id (EL CBX LISTA DESDE 0, Y EL ID EN LA DB, DESDE 1)
+                //Se corrije el Id (EL CBX LISTA DESDE 0, Y EL ID EN LA DB, DESDE 1)
                 cbxMarca.SelectedIndex = articulo.Marca.Id+1;
                 cbxCategoria.SelectedIndex = articulo.Categoria.Id+1;
                 txbDescripcion.Text = articulo.Descripcion;
@@ -92,6 +92,7 @@ namespace PresentacionForms
                     negocio.Agregar(articulo);
 
                     //Agregar Imagen desde cbox a base de datos 
+                    //Modificar para q sea una lista de imagenes
                     Imagen imgaux = new Imagen();
                     imgaux.ImagenUrl = (string)txbImagenURL.Text;
                     imgaux.IdArticulo = articulo.Id;
@@ -106,5 +107,14 @@ namespace PresentacionForms
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btAddImg_Click(object sender, EventArgs e)
+        {
+            lbxURL.Items.Add(txbImagenURL.Text);
+            pbImagen.ImageLocation = lbxURL.Items[lbxURL.Items.Count - 1].ToString();
+            
+        }
     }
+
+
 }

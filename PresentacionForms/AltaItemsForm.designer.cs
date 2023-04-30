@@ -50,6 +50,8 @@
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.lbCodigo = new System.Windows.Forms.Label();
             this.txbCodigo = new System.Windows.Forms.TextBox();
+            this.lbxURL = new System.Windows.Forms.ListBox();
+            this.btAddImg = new System.Windows.Forms.Button();
             this.panelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).BeginInit();
@@ -265,6 +267,7 @@
             this.pbImagen.Location = new System.Drawing.Point(464, 142);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(204, 235);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 12;
             this.pbImagen.TabStop = false;
             // 
@@ -289,6 +292,24 @@
             this.txbCodigo.Size = new System.Drawing.Size(162, 23);
             this.txbCodigo.TabIndex = 14;
             // 
+            // lbxURL
+            // 
+            this.lbxURL.FormattingEnabled = true;
+            this.lbxURL.Location = new System.Drawing.Point(446, 480);
+            this.lbxURL.Name = "lbxURL";
+            this.lbxURL.Size = new System.Drawing.Size(248, 95);
+            this.lbxURL.TabIndex = 15;
+            // 
+            // btAddImg
+            // 
+            this.btAddImg.Location = new System.Drawing.Point(689, 413);
+            this.btAddImg.Name = "btAddImg";
+            this.btAddImg.Size = new System.Drawing.Size(39, 26);
+            this.btAddImg.TabIndex = 16;
+            this.btAddImg.Text = "+";
+            this.btAddImg.UseVisualStyleBackColor = true;
+            this.btAddImg.Click += new System.EventHandler(this.btAddImg_Click);
+            // 
             // AltaItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +317,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(113)))));
             this.CancelButton = this.btCancelar;
             this.ClientSize = new System.Drawing.Size(771, 654);
+            this.Controls.Add(this.btAddImg);
+            this.Controls.Add(this.lbxURL);
             this.Controls.Add(this.txbCodigo);
             this.Controls.Add(this.lbCodigo);
             this.Controls.Add(this.pbImagen);
@@ -355,5 +378,7 @@
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.Label lbCodigo;
         private System.Windows.Forms.TextBox txbCodigo;
+        private System.Windows.Forms.ListBox lbxURL;
+        private System.Windows.Forms.Button btAddImg;
     }
 }
