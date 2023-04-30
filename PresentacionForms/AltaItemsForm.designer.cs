@@ -44,16 +44,16 @@
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.lbCategoria = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTitulo = new System.Windows.Forms.Label();
             this.lbImagenURL = new System.Windows.Forms.Label();
-            this.tbxImagenURL = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txbImagenURL = new System.Windows.Forms.TextBox();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.lbCodigo = new System.Windows.Forms.Label();
             this.txbCodigo = new System.Windows.Forms.TextBox();
             this.panelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNombre
@@ -228,16 +228,16 @@
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lbTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(140, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 30);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "ALTA DE ITEM";
+            this.lbTitulo.AutoSize = true;
+            this.lbTitulo.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbTitulo.Location = new System.Drawing.Point(140, 97);
+            this.lbTitulo.Name = "lbTitulo";
+            this.lbTitulo.Size = new System.Drawing.Size(147, 30);
+            this.lbTitulo.TabIndex = 10;
+            this.lbTitulo.Text = "ALTA DE ITEM";
             // 
             // lbImagenURL
             // 
@@ -251,22 +251,22 @@
             this.lbImagenURL.Text = "Imagen (URL):";
             this.lbImagenURL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tbxImagenURL
+            // txbImagenURL
             // 
-            this.tbxImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbxImagenURL.Location = new System.Drawing.Point(446, 415);
-            this.tbxImagenURL.MaxLength = 2000;
-            this.tbxImagenURL.Name = "tbxImagenURL";
-            this.tbxImagenURL.Size = new System.Drawing.Size(237, 23);
-            this.tbxImagenURL.TabIndex = 6;
+            this.txbImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txbImagenURL.Location = new System.Drawing.Point(446, 415);
+            this.txbImagenURL.MaxLength = 2000;
+            this.txbImagenURL.Name = "txbImagenURL";
+            this.txbImagenURL.Size = new System.Drawing.Size(237, 23);
+            this.txbImagenURL.TabIndex = 6;
             // 
-            // pictureBox1
+            // pbImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(464, 142);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 235);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pbImagen.Location = new System.Drawing.Point(464, 142);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(204, 235);
+            this.pbImagen.TabIndex = 12;
+            this.pbImagen.TabStop = false;
             // 
             // lbCodigo
             // 
@@ -298,10 +298,10 @@
             this.ClientSize = new System.Drawing.Size(771, 654);
             this.Controls.Add(this.txbCodigo);
             this.Controls.Add(this.lbCodigo);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tbxImagenURL);
+            this.Controls.Add(this.pbImagen);
+            this.Controls.Add(this.txbImagenURL);
             this.Controls.Add(this.lbImagenURL);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbTitulo);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.lbCategoria);
             this.Controls.Add(this.cbxCategoria);
@@ -326,7 +326,7 @@
             this.panelSup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,10 +349,10 @@
         private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.Label lbCategoria;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.Label lbImagenURL;
-        private System.Windows.Forms.TextBox tbxImagenURL;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txbImagenURL;
+        private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.Label lbCodigo;
         private System.Windows.Forms.TextBox txbCodigo;
     }

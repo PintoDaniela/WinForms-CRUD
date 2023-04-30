@@ -22,14 +22,36 @@ namespace PresentacionForms
             InitializeComponent();
             Load();
         }
+        
+        public AltaItemsForm(Articulo art)
+        {
+            articulo = art;
+            InitializeComponent();
+            Load();
+        }
 
         //CARGA EL DROPDOWN LIST DE CATEGORIAS CON LAS OPCIONES DISPONIBLES
         private void Load()
-        {
+        {   
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             cbxCategoria.DataSource = categoriaNegocio.Listar();
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             cbxMarca.DataSource = marcaNegocio.Listar();
+
+            if(articulo != null) {
+                lbTitulo.Text = "MODIFICAR";
+                btAgregar.Text = "Modificar";
+                //Muestro en los controles, los valores que tiene actualmente el objeto
+                txbNombre.Text = articulo.Nombre;
+                txbPrecio.Text = articulo.Precio.ToString();
+                //Ver si toma bien la marca o hay que corregir el Id (EL CBX LISTA DESDE 0, Y EL ID EN LA DB, DESDE 1)
+                cbxMarca.SelectedIndex = articulo.Marca.Id+1;
+                cbxCategoria.SelectedIndex = articulo.Categoria.Id+1;
+                txbDescripcion.Text = articulo.Descripcion;
+                txbCodigo.Text = articulo.Codigo;
+                //Agregar codigo para visualizar la primer foto del articulo en la pbox (si es que tiene)
+                
+            }
         }
 
         private void picBoxMinimizar_Click(object sender, EventArgs e)
@@ -71,7 +93,7 @@ namespace PresentacionForms
 
                     //Agregar Imagen desde cbox a base de datos 
                     Imagen imgaux = new Imagen();
-                    imgaux.ImagenUrl = (string)tbxImagenURL.Text;
+                    imgaux.ImagenUrl = (string)txbImagenURL.Text;
                     imgaux.IdArticulo = articulo.Id;
                     imagenes.agregar(imgaux);
                    

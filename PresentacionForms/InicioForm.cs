@@ -137,5 +137,12 @@ namespace PresentacionForms
                 picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[indiceImagen].ToString();
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {   //Envio el objeto articulo desde la fila seleccionada en la DGV
+            Articulo art=(Articulo)DgvListaPrincipal.CurrentRow.DataBoundItem;
+            AltaItemsForm ventana = new AltaItemsForm(art);
+            ventana.ShowDialog();
+        }
     }
 }
