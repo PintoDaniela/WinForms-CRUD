@@ -114,6 +114,13 @@ namespace PresentacionForms
             pbImagen.ImageLocation = lbxURL.Items[lbxURL.Items.Count - 1].ToString();
             
         }
+
+        private void eliminarImagenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lbxURL.Items.Remove(lbxURL.SelectedItem);
+        }
+
+        
     }
 
 

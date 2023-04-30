@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaItemsForm));
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbDescripcion = new System.Windows.Forms.Label();
@@ -52,10 +53,13 @@
             this.txbCodigo = new System.Windows.Forms.TextBox();
             this.lbxURL = new System.Windows.Forms.ListBox();
             this.btAddImg = new System.Windows.Forms.Button();
+            this.menuURL = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.eliminarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
+            this.menuURL.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbNombre
@@ -246,7 +250,7 @@
             this.lbImagenURL.AutoSize = true;
             this.lbImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbImagenURL.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbImagenURL.Location = new System.Drawing.Point(511, 395);
+            this.lbImagenURL.Location = new System.Drawing.Point(496, 392);
             this.lbImagenURL.Name = "lbImagenURL";
             this.lbImagenURL.Size = new System.Drawing.Size(100, 17);
             this.lbImagenURL.TabIndex = 11;
@@ -256,7 +260,7 @@
             // txbImagenURL
             // 
             this.txbImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txbImagenURL.Location = new System.Drawing.Point(446, 415);
+            this.txbImagenURL.Location = new System.Drawing.Point(431, 412);
             this.txbImagenURL.MaxLength = 2000;
             this.txbImagenURL.Name = "txbImagenURL";
             this.txbImagenURL.Size = new System.Drawing.Size(237, 23);
@@ -294,21 +298,38 @@
             // 
             // lbxURL
             // 
+            this.lbxURL.ContextMenuStrip = this.menuURL;
             this.lbxURL.FormattingEnabled = true;
-            this.lbxURL.Location = new System.Drawing.Point(446, 480);
+            this.lbxURL.Location = new System.Drawing.Point(431, 475);
             this.lbxURL.Name = "lbxURL";
             this.lbxURL.Size = new System.Drawing.Size(248, 95);
             this.lbxURL.TabIndex = 15;
+            this.lbxURL.SelectedIndexChanged += new System.EventHandler(this.lbxURL_SelectedIndexChanged);
+            this.lbxURL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lbxURL_KeyPress);
             // 
             // btAddImg
             // 
-            this.btAddImg.Location = new System.Drawing.Point(689, 413);
+            this.btAddImg.Location = new System.Drawing.Point(674, 410);
             this.btAddImg.Name = "btAddImg";
             this.btAddImg.Size = new System.Drawing.Size(39, 26);
             this.btAddImg.TabIndex = 16;
             this.btAddImg.Text = "+";
             this.btAddImg.UseVisualStyleBackColor = true;
             this.btAddImg.Click += new System.EventHandler(this.btAddImg_Click);
+            // 
+            // menuURL
+            // 
+            this.menuURL.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eliminarImagenToolStripMenuItem});
+            this.menuURL.Name = "menuURL";
+            this.menuURL.Size = new System.Drawing.Size(161, 26);
+            // 
+            // eliminarImagenToolStripMenuItem
+            // 
+            this.eliminarImagenToolStripMenuItem.Name = "eliminarImagenToolStripMenuItem";
+            this.eliminarImagenToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.eliminarImagenToolStripMenuItem.Text = "Eliminar imagen";
+            this.eliminarImagenToolStripMenuItem.Click += new System.EventHandler(this.eliminarImagenToolStripMenuItem_Click);
             // 
             // AltaItemsForm
             // 
@@ -350,6 +371,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
+            this.menuURL.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +402,7 @@
         private System.Windows.Forms.TextBox txbCodigo;
         private System.Windows.Forms.ListBox lbxURL;
         private System.Windows.Forms.Button btAddImg;
+        private System.Windows.Forms.ContextMenuStrip menuURL;
+        private System.Windows.Forms.ToolStripMenuItem eliminarImagenToolStripMenuItem;
     }
 }
