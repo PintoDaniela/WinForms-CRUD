@@ -14,44 +14,38 @@ namespace Negocio
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
+            AccesoDatos datos = new AccesoDatos();
 
             try
-            {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.Id,  A.Codigo, A.Nombre, A.Precio, A.Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id";
-                comando.Connection = conexion;
+            {               
+                datos.setearConsulta("SELECT A.Id,  A.Codigo, A.Nombre, A.Precio, A.Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id");
+                datos.ejecutarLectura();
 
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
 
                     Articulo aux = new Articulo();
-                    aux.Id = lector.GetInt32(0);
-                    aux.Codigo = (string)lector["Codigo"];
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Precio = (decimal)lector["Precio"];
-                    aux.Descripcion = (string)lector["Descripcion"];
+                    aux.Id = datos.Lector.GetInt32(0);
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Categoria = new Categoria();
-                    aux.Categoria.Descripcion = (string)lector["Categoria"];                    
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];                    
                     aux.Marca = new Marca();
-                    aux.Marca.Descripcion = (string)lector["Marca"];                   
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];                   
 
                     lista.Add(aux);                    
                 }
-
-                conexion.Close();
-
                 return lista;
             }
             catch (Exception ex) 
             { 
                 throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
 
 
