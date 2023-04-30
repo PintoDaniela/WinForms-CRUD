@@ -62,6 +62,8 @@
             this.txtMostrarDescripcion = new System.Windows.Forms.TextBox();
             this.picImagen = new System.Windows.Forms.PictureBox();
             this.DgvListaPrincipal = new System.Windows.Forms.DataGridView();
+            this.btnAtrasImagen = new System.Windows.Forms.Button();
+            this.btnAdelanteImagen = new System.Windows.Forms.Button();
             this.PanelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRestaurar)).BeginInit();
@@ -472,6 +474,8 @@
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(113)))));
+            this.panelPrincipal.Controls.Add(this.btnAdelanteImagen);
+            this.panelPrincipal.Controls.Add(this.btnAtrasImagen);
             this.panelPrincipal.Controls.Add(this.txtMostrarDescripcion);
             this.panelPrincipal.Controls.Add(this.picImagen);
             this.panelPrincipal.Controls.Add(this.DgvListaPrincipal);
@@ -486,7 +490,7 @@
             // 
             this.txtMostrarDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMostrarDescripcion.Location = new System.Drawing.Point(774, 308);
+            this.txtMostrarDescripcion.Location = new System.Drawing.Point(774, 387);
             this.txtMostrarDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMostrarDescripcion.Multiline = true;
             this.txtMostrarDescripcion.Name = "txtMostrarDescripcion";
@@ -525,6 +529,26 @@
             this.DgvListaPrincipal.Size = new System.Drawing.Size(738, 542);
             this.DgvListaPrincipal.TabIndex = 0;
             this.DgvListaPrincipal.SelectionChanged += new System.EventHandler(this.DgvListaPrincipal_SelectionChanged);
+            // 
+            // btnAtrasImagen
+            // 
+            this.btnAtrasImagen.Location = new System.Drawing.Point(856, 305);
+            this.btnAtrasImagen.Name = "btnAtrasImagen";
+            this.btnAtrasImagen.Size = new System.Drawing.Size(48, 49);
+            this.btnAtrasImagen.TabIndex = 3;
+            this.btnAtrasImagen.Text = "<-";
+            this.btnAtrasImagen.UseVisualStyleBackColor = true;
+            this.btnAtrasImagen.Click += new System.EventHandler(this.btnAtrasImagen_Click);
+            // 
+            // btnAdelanteImagen
+            // 
+            this.btnAdelanteImagen.Location = new System.Drawing.Point(931, 305);
+            this.btnAdelanteImagen.Name = "btnAdelanteImagen";
+            this.btnAdelanteImagen.Size = new System.Drawing.Size(48, 49);
+            this.btnAdelanteImagen.TabIndex = 4;
+            this.btnAdelanteImagen.Text = "->";
+            this.btnAdelanteImagen.UseVisualStyleBackColor = true;
+            this.btnAdelanteImagen.Click += new System.EventHandler(this.btnAdelanteImagen_Click);
             // 
             // InicioForm
             // 
@@ -592,6 +616,8 @@
         private System.Windows.Forms.Button btnAgregarMarca;
         private System.Windows.Forms.TextBox txtMostrarDescripcion;
         private System.Windows.Forms.PictureBox picImagen;
+        private System.Windows.Forms.Button btnAdelanteImagen;
+        private System.Windows.Forms.Button btnAtrasImagen;
     }
 }
 

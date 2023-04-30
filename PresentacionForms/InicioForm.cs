@@ -23,7 +23,10 @@ namespace PresentacionForms
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         const int WM_NCLBUTTONDOWN = 0xA1;
         const int HT_CAPTION = 0x2;
-        
+
+        //para el indice de imagen
+        int indiceImagen;
+
         public InicioForm()
         {
             //Load();
@@ -31,7 +34,7 @@ namespace PresentacionForms
         }
         //private void Load()
         //{
-            
+
         //}
 
         private void PicBoxCerrar_Click(object sender, EventArgs e)
@@ -85,7 +88,7 @@ namespace PresentacionForms
             AltaItemsForm ventana = new AltaItemsForm();
             ventana.ShowDialog();
         }
-        
+
 
         private void InicioForm_Load(object sender, EventArgs e)
         {
@@ -94,6 +97,7 @@ namespace PresentacionForms
             ImagenNegocio imagenNegocio = new ImagenNegocio();
             int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
             picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
+            indiceImagen = 0;
 
         }
 
@@ -107,6 +111,31 @@ namespace PresentacionForms
             ImagenNegocio imagenNegocio = new ImagenNegocio();
             int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
             picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
+            indiceImagen = 0;
+        }
+
+        private void btnAtrasImagen_Click(object sender, EventArgs e)
+        {
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+            if (indiceImagen != 0)
+            {
+                indiceImagen--;
+                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[indiceImagen].ToString();
+            }
+        }
+
+        private void btnAdelanteImagen_Click(object sender, EventArgs e)
+        {
+            ImagenNegocio imagenNegocio = new ImagenNegocio();
+            int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+            int indiceMaximo = imagenNegocio.listar(idArticulo).Count - 1;
+           
+            if(indiceImagen != indiceMaximo)
+            {
+                indiceImagen++;
+                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[indiceImagen].ToString();
+            }
         }
     }
 }
