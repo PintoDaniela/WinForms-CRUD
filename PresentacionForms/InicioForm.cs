@@ -144,5 +144,52 @@ namespace PresentacionForms
             AltaItemsForm ventana = new AltaItemsForm(art);
             ventana.ShowDialog();
         }
+
+        //Sólo aja física porque la tabla de articulos de la DB no tiene campo bool para estado activo o no activo.
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        private void eliminar(bool logico = false)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿De verdad querés eliminarlo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)DgvListaPrincipal.CurrentRow.DataBoundItem;
+
+                    negocio.Eliminar(seleccionado.Id);
+
+                    cargar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {                
+                DgvListaPrincipal.DataSource = negocio.listar();
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+                int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
+                indiceImagen = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        
+
     }
 }

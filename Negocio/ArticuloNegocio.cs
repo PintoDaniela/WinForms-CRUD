@@ -22,8 +22,7 @@ namespace Negocio
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
-                {
-
+                {                    
                     Articulo aux = new Articulo();
                     aux.Id = datos.Lector.GetInt32(0);
                     aux.Codigo = (string)datos.Lector["Codigo"];
@@ -70,9 +69,10 @@ namespace Negocio
             }
         }
 
-        //public void AgregarImagen
 
-
+        //MODIFICAR:
+        //Falta metodo para modificar imagen desde ImagenNegocio
+        //Se podría permitir agregar Marca y categoría en caso de que se quieramodificar por una inexistente en la DB
         public void Modificar(Articulo articulo) 
         {
             AccesoDatos datos = new AccesoDatos();
@@ -100,7 +100,7 @@ namespace Negocio
 
         }        
 
-        public void Elminar(Articulo id) 
+        public void Eliminar(int id) 
         {
             try
             {
