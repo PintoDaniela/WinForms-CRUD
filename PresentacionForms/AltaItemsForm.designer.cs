@@ -52,9 +52,9 @@
             this.lbCodigo = new System.Windows.Forms.Label();
             this.txbCodigo = new System.Windows.Forms.TextBox();
             this.lbxURL = new System.Windows.Forms.ListBox();
-            this.btAddImg = new System.Windows.Forms.Button();
             this.menuURL = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btAddImg = new System.Windows.Forms.Button();
             this.panelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).BeginInit();
@@ -304,16 +304,7 @@
             this.lbxURL.Name = "lbxURL";
             this.lbxURL.Size = new System.Drawing.Size(248, 95);
             this.lbxURL.TabIndex = 15;
-            // 
-            // btAddImg
-            // 
-            this.btAddImg.Location = new System.Drawing.Point(674, 410);
-            this.btAddImg.Name = "btAddImg";
-            this.btAddImg.Size = new System.Drawing.Size(39, 26);
-            this.btAddImg.TabIndex = 16;
-            this.btAddImg.Text = "+";
-            this.btAddImg.UseVisualStyleBackColor = true;
-            this.btAddImg.Click += new System.EventHandler(this.btAddImg_Click);
+            this.lbxURL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbxURL_KeyDown);
             // 
             // menuURL
             // 
@@ -328,6 +319,16 @@
             this.eliminarImagenToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.eliminarImagenToolStripMenuItem.Text = "Eliminar imagen";
             this.eliminarImagenToolStripMenuItem.Click += new System.EventHandler(this.eliminarImagenToolStripMenuItem_Click);
+            // 
+            // btAddImg
+            // 
+            this.btAddImg.Location = new System.Drawing.Point(674, 410);
+            this.btAddImg.Name = "btAddImg";
+            this.btAddImg.Size = new System.Drawing.Size(39, 26);
+            this.btAddImg.TabIndex = 16;
+            this.btAddImg.Text = "+";
+            this.btAddImg.UseVisualStyleBackColor = true;
+            this.btAddImg.Click += new System.EventHandler(this.btAddImg_Click);
             // 
             // AltaItemsForm
             // 

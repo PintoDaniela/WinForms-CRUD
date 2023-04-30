@@ -112,6 +112,7 @@ namespace PresentacionForms
         {
             lbxURL.Items.Add(txbImagenURL.Text);
             pbImagen.ImageLocation = lbxURL.Items[lbxURL.Items.Count - 1].ToString();
+            txbImagenURL.Text = "";
             
         }
 
@@ -120,7 +121,12 @@ namespace PresentacionForms
             lbxURL.Items.Remove(lbxURL.SelectedItem);
         }
 
-        
+        private void lbxURL_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete) {
+                lbxURL.Items.Remove(lbxURL.SelectedItem);
+            }
+        }
     }
 
 
