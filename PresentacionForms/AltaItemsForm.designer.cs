@@ -304,8 +304,6 @@
             this.lbxURL.Name = "lbxURL";
             this.lbxURL.Size = new System.Drawing.Size(248, 95);
             this.lbxURL.TabIndex = 15;
-            this.lbxURL.SelectedIndexChanged += new System.EventHandler(this.lbxURL_SelectedIndexChanged);
-            this.lbxURL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lbxURL_KeyPress);
             // 
             // btAddImg
             // 
