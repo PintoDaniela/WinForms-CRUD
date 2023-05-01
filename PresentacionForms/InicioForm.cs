@@ -92,13 +92,15 @@ namespace PresentacionForms
 
         private void InicioForm_Load(object sender, EventArgs e)
         {
+            cargar();
+            /*
             ArticuloNegocio negocio = new ArticuloNegocio();
             DgvListaPrincipal.DataSource = negocio.listar();
             ImagenNegocio imagenNegocio = new ImagenNegocio();
             int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
             picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
             indiceImagen = 0;
-
+            */
         }
 
         private void PanelSuperior_Paint(object sender, PaintEventArgs e)
@@ -145,7 +147,7 @@ namespace PresentacionForms
             ventana.ShowDialog();
         }
 
-        //Sólo aja física porque la tabla de articulos de la DB no tiene campo bool para estado activo o no activo.
+        //Sólo baja física porque la tabla de articulos de la DB no tiene campo bool para estado activo o no activo.
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             eliminar();
@@ -163,7 +165,8 @@ namespace PresentacionForms
                     seleccionado = (Articulo)DgvListaPrincipal.CurrentRow.DataBoundItem;
 
                     negocio.Eliminar(seleccionado.Id);
-
+                    
+                    //Vuelvo a cargar el dgv para actualizar los datos.
                     cargar();
                 }
             }
