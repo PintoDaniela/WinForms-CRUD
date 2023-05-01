@@ -129,11 +129,13 @@ namespace PresentacionForms
 
         private void lbxURL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pbImagen.ImageLocation = lbxURL.SelectedItem.ToString();
-            foreach(var item in lbxURL.Items)
+            if (lbxURL.SelectedItem != null)
             {
-                string a = item.ToString();
-
+                pbImagen.ImageLocation = lbxURL.SelectedItem.ToString();
+            }
+            else
+            {                              //placeholder
+                pbImagen.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
             }
         }
     }

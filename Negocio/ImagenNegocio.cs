@@ -51,6 +51,7 @@ namespace Negocio
                 string valores = "values('" + nuevo.IdArticulo + "', '" + nuevo.ImagenUrl + "')";
                 datos.setearConsulta("insert into Imagenes (IdArticulo, ImagenUrl)" + valores);
                 datos.ejecutarLectura();
+                
             }
             catch (Exception ex)
             {   
@@ -61,18 +62,21 @@ namespace Negocio
         public void Agregar(List<string> lista,int idArticulo)
         {
             AccesoDatos datos = new AccesoDatos();
+            
             try
             {
                 foreach (var item in lista)
                 {
-                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) values ("+idArticulo+" ,'"+item+"'");
-                    datos.ejecutarLectura();
+                    string valores = "values ('"+idArticulo+"' ,'"+item+"')";
+                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl)"+valores);
+                    datos.ejecutarAccion();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                datos.cerrarConexion();
+                throw ex;
             }
             finally { datos.cerrarConexion();}
         }
