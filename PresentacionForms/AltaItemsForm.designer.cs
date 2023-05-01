@@ -304,6 +304,7 @@
             this.lbxURL.Name = "lbxURL";
             this.lbxURL.Size = new System.Drawing.Size(248, 95);
             this.lbxURL.TabIndex = 15;
+            this.lbxURL.SelectedIndexChanged += new System.EventHandler(this.lbxURL_SelectedIndexChanged);
             this.lbxURL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbxURL_KeyDown);
             // 
             // menuURL

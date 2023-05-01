@@ -86,7 +86,8 @@ namespace PresentacionForms
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             AltaItemsForm ventana = new AltaItemsForm();
-            ventana.ShowDialog();
+            //ventana.ShowDialog();
+            ventana.Show();
         }
 
 

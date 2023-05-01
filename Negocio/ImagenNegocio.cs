@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace Negocio
 
         }
 
-        public void agregar(Imagen nuevo)
+        public void Agregar(Imagen nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
             try
@@ -55,6 +56,25 @@ namespace Negocio
             {   
                 throw ex;
             }
+        }
+
+        public void Agregar(List<string> lista,int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                foreach (var item in lista)
+                {
+                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) values ("+idArticulo+" ,'"+item+"'");
+                    datos.ejecutarLectura();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally { datos.cerrarConexion();}
         }
 
         public void modificar(Imagen nuevo)

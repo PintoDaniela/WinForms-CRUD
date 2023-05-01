@@ -90,13 +90,12 @@ namespace PresentacionForms
                 else
                 {
                     negocio.Agregar(articulo);
+                    //Agrego Imagenes a Articulo (si tiene)
+                    int ultimo = negocio.listar().Count()-1;
+                    Articulo articuloaux = negocio.listar()[ultimo];
+                    List<string> listaurls =lbxURL.Items.Cast<string>().ToList();
+                    imagenes.Agregar(listaurls, articuloaux.Id);
 
-                    //Agregar Imagen desde cbox a base de datos 
-                    //Modificar para q sea una lista de imagenes
-                    Imagen imgaux = new Imagen();
-                    imgaux.ImagenUrl = (string)txbImagenURL.Text;
-                    imgaux.IdArticulo = articulo.Id;
-                    imagenes.agregar(imgaux);
                    
                     MessageBox.Show("Alta exitosa");
                 }
@@ -125,6 +124,16 @@ namespace PresentacionForms
         {
             if(e.KeyCode == Keys.Delete) {
                 lbxURL.Items.Remove(lbxURL.SelectedItem);
+            }
+        }
+
+        private void lbxURL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pbImagen.ImageLocation = lbxURL.SelectedItem.ToString();
+            foreach(var item in lbxURL.Items)
+            {
+                string a = item.ToString();
+
             }
         }
     }
