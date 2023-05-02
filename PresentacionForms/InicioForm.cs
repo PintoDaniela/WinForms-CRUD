@@ -96,8 +96,18 @@ namespace PresentacionForms
         {
             ImagenNegocio imagenNegocio = new ImagenNegocio();
             int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
-            picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
-            indiceImagen = 0;
+            List<Imagen> imagenesRelacionadas = imagenNegocio.listar(idArticulo);
+            if (imagenesRelacionadas.Count > 0)
+            {
+                picImagen.ImageLocation = imagenesRelacionadas[0].ImagenUrl;
+                indiceImagen = 0;
+            }
+            else
+            {
+                // Si no hay imágenes relacionadas con el idArticulo en la tabla, podrías mostrar una imagen predeterminada o borrar la imagen actual              
+                picImagen.ImageLocation = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY2wAld_bToqR1Ox1hEhlMwrcwOGWeiDBcYbVDTiY&s";
+            }
+
         }
 
         private void btnAtrasImagen_Click(object sender, EventArgs e)
