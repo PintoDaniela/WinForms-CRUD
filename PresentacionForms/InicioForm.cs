@@ -149,7 +149,7 @@ namespace PresentacionForms
             int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
             int indiceMaximo = imagenNegocio.listar(idArticulo).Count - 1;
            
-            if(indiceImagen != indiceMaximo)
+            if(indiceImagen != indiceMaximo && indiceMaximo>=0)
             {
                 indiceImagen++;
                 picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[indiceImagen].ToString();
