@@ -49,8 +49,29 @@ namespace PresentacionForms
                 cbxCategoria.SelectedIndex = articulo.Categoria.Id+1;
                 txbDescripcion.Text = articulo.Descripcion;
                 txbCodigo.Text = articulo.Codigo;
+
+
                 //Agregar codigo para visualizar la primer foto del articulo en la pbox (si es que tiene)
-                
+                ImagenNegocio imagenes = new ImagenNegocio();
+                Imagen img = new Imagen();
+                if (imagenes.listar(articulo.Id).Count() > 0)
+                {
+                    img=imagenes.listar(articulo.Id)[0];
+                    pbImagen.ImageLocation = img.ImagenUrl;
+                }
+                else
+                {   //placeholder en Modificar
+                    pbImagen.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
+
+                }
+                //Cargo las Imagenes que contenga el Articulo a Modificar en la list box.
+                List<Imagen> imglist = imagenes.listar(articulo.Id);
+                lbxURL.DataSource= imglist;
+            }
+            else
+            {
+                //Agrego placeholder en Agregar
+                pbImagen.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
             }
         }
 
@@ -85,7 +106,8 @@ namespace PresentacionForms
                 {                       
                     negocio.Modificar(articulo);
                     List<string> listaurls = lbxURL.Items.Cast<string>().ToList();
-                    imagenes.Agregar(listaurls, articulo.Id);
+                    //imagenes.Agregar(listaurls, articulo.Id);
+                    
                     //Ver si cómo agregar la opción de borrar las existentes. Por ahora sólo permite agregar nuevas.
                     MessageBox.Show("Modificacion Exitosa");
                 }

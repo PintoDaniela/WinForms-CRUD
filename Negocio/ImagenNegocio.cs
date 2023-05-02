@@ -94,6 +94,7 @@ namespace Negocio
             {
                 throw ex;
             }
+            finally { datos.cerrarConexion(); }
         }
 
         public void eliminar(int id)
@@ -108,6 +109,7 @@ namespace Negocio
             {
                 throw ex;
             }
+            finally { datos.cerrarConexion(); }
         }
 
         public void eliminarPorArticulo(int idArticulo)
@@ -122,6 +124,7 @@ namespace Negocio
             {
                 throw ex;
             }
+            finally { datos.cerrarConexion(); }
         }
     }
 }
