@@ -76,16 +76,37 @@ namespace PresentacionForms
             ventana.FormClosed += new FormClosedEventHandler(Ventana_FormClosed);
             ventana.Show();
         }
+
+
+        //Se carga el listado que se muestra en el dgv:
+        private void cargar()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                DgvListaPrincipal.DataSource = negocio.listar();
+                ImagenNegocio imagenNegocio = new ImagenNegocio();
+                int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
+                indiceImagen = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void Ventana_FormClosed(object sender, FormClosedEventArgs e)
         {
             cargar();
         }
 
+  
 
         private void InicioForm_Load(object sender, EventArgs e)
         {
             cargar();
-            
+
+            //Se agregan las opciones del desplegable al cargar el form:
             cbxCampo.Items.Add("Precio");
             cbxCampo.Items.Add("Nombre");
             cbxCampo.Items.Add("Descripcion");
@@ -166,6 +187,8 @@ namespace PresentacionForms
 
                     //Vuelvo a cargar el dgv para actualizar los datos.
                     cargar();
+
+                    //Al eliminar el artículo, se borran las imágenes del mismo de la tabla de imágenes.
                     negocioImg.eliminarPorArticulo(idArticulo);
                 }
             }
@@ -175,25 +198,8 @@ namespace PresentacionForms
             }
         }
 
-        private void cargar()
-        {
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            try
-            {                
-                DgvListaPrincipal.DataSource = negocio.listar();
-                ImagenNegocio imagenNegocio = new ImagenNegocio();
-                int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
-                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
-                indiceImagen = 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
 
-        
-
+        //Mostrar u ocultar el submenú del fintro con el botón Filtrar
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
 
@@ -211,9 +217,10 @@ namespace PresentacionForms
             }
         }
 
+        //Setear las opciones que aparecen en el despregable de criterio según la opción elegida.
         private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string opcion = cbxCriterio.SelectedItem.ToString();
+            string opcion = cbxCampo.SelectedItem.ToString();
             if (opcion == "Precio")
             {
                 cbxCriterio.Items.Clear();
