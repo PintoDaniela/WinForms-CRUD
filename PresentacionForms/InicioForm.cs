@@ -147,7 +147,9 @@ namespace PresentacionForms
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
-        {   //Envio el objeto articulo desde la fila seleccionada en la DGV
+        {   
+            
+            //Envio el objeto articulo desde la fila seleccionada en la DGV
             Articulo art=(Articulo)DgvListaPrincipal.CurrentRow.DataBoundItem;
             AltaItemsForm ventana = new AltaItemsForm(art);
             ventana.ShowDialog();
@@ -173,7 +175,7 @@ namespace PresentacionForms
                     negocio.Eliminar(seleccionado.Id);
                     
                     //Vuelvo a cargar el dgv para actualizar los datos.
-                    cargar();
+                    //cargar();
                 }
             }
             catch (Exception ex)

@@ -82,9 +82,11 @@ namespace PresentacionForms
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 
                 if(articulo.Id != 0)
-                {   
-                    //Agregar funcion Modoficar en ArticuloNegocio
-                    //negocio.Modificar(articulo);
+                {                       
+                    negocio.Modificar(articulo);
+                    List<string> listaurls = lbxURL.Items.Cast<string>().ToList();
+                    imagenes.Agregar(listaurls, articulo.Id);
+                    //Ver si cómo agregar la opción de borrar las existentes. Por ahora sólo permite agregar nuevas.
                     MessageBox.Show("Modificacion Exitosa");
                 }
                 else
