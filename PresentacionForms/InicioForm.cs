@@ -175,7 +175,7 @@ namespace PresentacionForms
                     negocio.Eliminar(seleccionado.Id);
                     
                     //Vuelvo a cargar el dgv para actualizar los datos.
-                    //cargar();
+                    cargar();
                 }
             }
             catch (Exception ex)
