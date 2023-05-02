@@ -11,6 +11,7 @@ using System.Runtime.InteropServices; // para poder mover la ventana
 
 using Negocio;
 using Dominio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PresentacionForms
 {
@@ -212,8 +213,10 @@ namespace PresentacionForms
                 panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y + alturaFiltro);
             }
             else
-            {
+            { 
                 panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y - alturaFiltro);
+                //Se reestablece DGV cuando se minimiza la opcion de "Filtrar"
+                cargar();
             }
         }
 
@@ -237,6 +240,12 @@ namespace PresentacionForms
             }
         }
 
-       
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            //Se carga la DGV con los resultados del filtro aplicado.
+            DgvListaPrincipal.DataSource = negocio.filtrar(cbxCampo.SelectedItem.ToString(),cbxCriterio.SelectedItem.ToString(),txtFiltro.Text);
+
+        }
     }
 }
