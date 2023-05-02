@@ -109,5 +109,19 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void eliminarPorArticulo(int idArticulo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("delete from Imagenes where IdArticulo = " + idArticulo);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

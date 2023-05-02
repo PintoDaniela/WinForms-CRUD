@@ -164,6 +164,7 @@ namespace PresentacionForms
         private void eliminar(bool logico = false)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
+            ImagenNegocio negocioImg = new ImagenNegocio();
             Articulo seleccionado;
             try
             {
@@ -171,11 +172,13 @@ namespace PresentacionForms
                 if (respuesta == DialogResult.Yes)
                 {
                     seleccionado = (Articulo)DgvListaPrincipal.CurrentRow.DataBoundItem;
-
-                    negocio.Eliminar(seleccionado.Id);
+                    int idArticulo = seleccionado.Id;
+                    negocio.Eliminar(idArticulo);
                     
+
                     //Vuelvo a cargar el dgv para actualizar los datos.
                     cargar();
+                    negocioImg.eliminarPorArticulo(idArticulo);
                 }
             }
             catch (Exception ex)
