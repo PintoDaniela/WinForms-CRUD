@@ -68,23 +68,7 @@ namespace PresentacionForms
             SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
-        private void btnFiltrar_Click(object sender, EventArgs e)
-        {          
-
-            Action toggleSubMenuFiltro = () => submenuFiltro.Visible = !submenuFiltro.Visible;
-            toggleSubMenuFiltro();
-
-            int alturaFiltro = submenuFiltro.Height;
-            if (submenuFiltro.Visible)
-            {
-                panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y + alturaFiltro);
-            }
-            else
-            {
-                panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y - alturaFiltro);
-            }            
-        }
-
+   
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             AltaItemsForm ventana = new AltaItemsForm();
@@ -100,7 +84,12 @@ namespace PresentacionForms
 
         private void InicioForm_Load(object sender, EventArgs e)
         {
-            cargar();          
+            cargar();
+            
+            cbxCampo.Items.Add("Precio");
+            cbxCampo.Items.Add("Nombre");
+            cbxCampo.Items.Add("Descripcion");
+            cbxCampo.Items.Add("Codigo");
         }
 
         private void DgvListaPrincipal_SelectionChanged(object sender, EventArgs e)
@@ -192,7 +181,45 @@ namespace PresentacionForms
                 MessageBox.Show(ex.ToString());
             }
         }
+
         
 
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+
+            Action toggleSubMenuFiltro = () => submenuFiltro.Visible = !submenuFiltro.Visible;
+            toggleSubMenuFiltro();
+
+            int alturaFiltro = submenuFiltro.Height;
+            if (submenuFiltro.Visible)
+            {
+                panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y + alturaFiltro);
+            }
+            else
+            {
+                panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y - alturaFiltro);
+            }
+        }
+
+        private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cbxCriterio.SelectedItem.ToString();
+            if (opcion == "Precio")
+            {
+                cbxCriterio.Items.Clear();
+                cbxCriterio.Items.Add("Mayor a");
+                cbxCriterio.Items.Add("Menor a");
+                cbxCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cbxCriterio.Items.Clear();
+                cbxCriterio.Items.Add("Comienza con");
+                cbxCriterio.Items.Add("Termina con");
+                cbxCriterio.Items.Add("Contiene");
+            }
+        }
+
+       
     }
 }

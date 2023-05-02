@@ -262,7 +262,7 @@
             this.submenuFiltro.Controls.Add(this.label3);
             this.submenuFiltro.Controls.Add(this.label2);
             this.submenuFiltro.Controls.Add(this.label1);
-            this.submenuFiltro.Location = new System.Drawing.Point(31, 212);
+            this.submenuFiltro.Location = new System.Drawing.Point(29, 211);
             this.submenuFiltro.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.submenuFiltro.Name = "submenuFiltro";
             this.submenuFiltro.Size = new System.Drawing.Size(164, 186);
@@ -315,6 +315,7 @@
             this.cbxCampo.Name = "cbxCampo";
             this.cbxCampo.Size = new System.Drawing.Size(136, 24);
             this.cbxCampo.TabIndex = 5;
+            this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
             // 
             // txtFiltro
             // 
