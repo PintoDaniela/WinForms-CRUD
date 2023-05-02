@@ -122,7 +122,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = ("SELECT A.Id, A.Codigo, A.Nombre, A.Precio, A.Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id");
+                string consulta = ("SELECT A.Id, A.Codigo, A.Nombre, A.Precio, A.Descripcion, C.Descripcion as Categoria, M.Descripcion as Marca FROM ARTICULOS A, MARCAS M, CATEGORIAS C WHERE A.IdCategoria = C.Id AND A.IdMarca = M.Id AND");
                 if (campo == "Precio")
                 {
                     switch (criterio)

@@ -16,6 +16,7 @@ namespace PresentacionForms
 {
     public partial class InicioForm : Form
     {
+       
         // para poder mover la ventana
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -68,7 +69,8 @@ namespace PresentacionForms
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
-        {
+        {          
+
             Action toggleSubMenuFiltro = () => submenuFiltro.Visible = !submenuFiltro.Visible;
             toggleSubMenuFiltro();
 
@@ -80,7 +82,7 @@ namespace PresentacionForms
             else
             {
                 panelAgregarCategoria.Location = new Point(panelAgregarCategoria.Location.X, panelAgregarCategoria.Location.Y - alturaFiltro);
-            }
+            }            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -98,20 +100,7 @@ namespace PresentacionForms
 
         private void InicioForm_Load(object sender, EventArgs e)
         {
-            cargar();
-            /*
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            DgvListaPrincipal.DataSource = negocio.listar();
-            ImagenNegocio imagenNegocio = new ImagenNegocio();
-            int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
-            picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
-            indiceImagen = 0;
-            */
-        }
-
-        private void PanelSuperior_Paint(object sender, PaintEventArgs e)
-        {
-
+            cargar();          
         }
 
         private void DgvListaPrincipal_SelectionChanged(object sender, EventArgs e)
