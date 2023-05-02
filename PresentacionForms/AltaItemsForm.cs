@@ -100,7 +100,7 @@ namespace PresentacionForms
                     MessageBox.Show("Alta exitosa");
                     
                 }
-
+                this.Close();
             }
             catch(Exception ex) 
             {

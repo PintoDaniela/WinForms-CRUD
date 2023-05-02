@@ -87,7 +87,12 @@ namespace PresentacionForms
         {
             AltaItemsForm ventana = new AltaItemsForm();
             //ventana.ShowDialog();
+            ventana.FormClosed += new FormClosedEventHandler(Ventana_FormClosed);
             ventana.Show();
+        }
+        private void Ventana_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargar();
         }
 
 
