@@ -98,6 +98,7 @@ namespace PresentacionForms
 
                    
                     MessageBox.Show("Alta exitosa");
+                    
                 }
 
             }

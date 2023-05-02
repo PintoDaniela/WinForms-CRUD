@@ -48,7 +48,7 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string valores = "values('" + nuevo.IdArticulo + "', '" + nuevo.ImagenUrl + "')";
+                string valores = "values(" + nuevo.IdArticulo + ", '" + nuevo.ImagenUrl + "')";
                 datos.setearConsulta("insert into Imagenes (IdArticulo, ImagenUrl)" + valores);
                 datos.ejecutarLectura();
                 
@@ -59,26 +59,25 @@ namespace Negocio
             }
         }
 
-        public void Agregar(List<string> lista,int idArticulo)
+        public void Agregar(List<string> lista, int idArticulo)
         {
             AccesoDatos datos = new AccesoDatos();
-            
+
             try
             {
                 foreach (var item in lista)
                 {
-                    string valores = "values ('"+idArticulo+"' ,'"+item+"')";
-                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl)"+valores);
+                    string valores = "values (" + idArticulo + " ,'" + item + "')";
+                    datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl)" + valores);
                     datos.ejecutarAccion();
                 }
             }
             catch (Exception ex)
             {
 
-                datos.cerrarConexion();
                 throw ex;
             }
-            finally { datos.cerrarConexion();}
+            finally { datos.cerrarConexion(); }
         }
 
         public void modificar(Imagen nuevo)
