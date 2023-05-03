@@ -45,8 +45,8 @@ namespace PresentacionForms
                 txbNombre.Text = articulo.Nombre;
                 txbPrecio.Text = articulo.Precio.ToString();
                 //Se corrije el Id (EL CBX LISTA DESDE 0, Y EL ID EN LA DB, DESDE 1)
-                cbxMarca.SelectedIndex = articulo.Marca.Id+1;
-                cbxCategoria.SelectedIndex = articulo.Categoria.Id+1;
+                cbxMarca.SelectedIndex = articulo.Marca.Id;
+                cbxCategoria.SelectedIndex = articulo.Categoria.Id;
                 txbDescripcion.Text = articulo.Descripcion;
                 txbCodigo.Text = articulo.Codigo;
 
@@ -65,8 +65,13 @@ namespace PresentacionForms
 
                 }
                 //Cargo las Imagenes que contenga el Articulo a Modificar en la list box.
-                List<Imagen> imglist = imagenes.listar(articulo.Id);
-                lbxURL.DataSource= imglist;
+                List<Imagen> imglist = new List<Imagen>(); 
+                imglist=imagenes.listar(articulo.Id);
+                foreach (Imagen imagen in imglist)
+                {
+                    lbxURL.Items.Add(imagen.ImagenUrl);
+                }
+                
             }
             else
             {
@@ -103,10 +108,13 @@ namespace PresentacionForms
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 
                 if(articulo.Id != 0)
-                {                       
+                {
                     negocio.Modificar(articulo);
+                    //vacio los registros de imagenes para este articulo
+                    imagenes.Vaciar(articulo.Id);
+                    //Luego cargo a la db las url que esten en la listbox
                     List<string> listaurls = lbxURL.Items.Cast<string>().ToList();
-                    //imagenes.Agregar(listaurls, articulo.Id);
+                    imagenes.Agregar(listaurls, articulo.Id);
                     
                     //Ver si cómo agregar la opción de borrar las existentes. Por ahora sólo permite agregar nuevas.
                     MessageBox.Show("Modificacion Exitosa");
@@ -142,7 +150,7 @@ namespace PresentacionForms
 
         private void eliminarImagenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lbxURL.Items.Remove(lbxURL.SelectedItem);
+                lbxURL.Items.Remove(lbxURL.SelectedItem);
         }
 
         private void lbxURL_KeyDown(object sender, KeyEventArgs e)

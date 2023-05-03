@@ -80,6 +80,23 @@ namespace Negocio
             finally { datos.cerrarConexion(); }
         }
 
+
+        public void Vaciar(int idArticulo) {
+
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo=" + idArticulo);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex) 
+            {
+
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
+        }
         public void modificar(Imagen nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
