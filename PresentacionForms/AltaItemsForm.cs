@@ -170,6 +170,12 @@ namespace PresentacionForms
                 pbImagen.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
             }
         }
+
+        //Cierro el form de alta con el botón cancelar
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 

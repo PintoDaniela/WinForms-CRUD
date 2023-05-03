@@ -318,7 +318,7 @@
   <data name="btCarpeta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAR
-        YAAAEWABWyEsZAAAALZJREFUOE/t1DEKwjAUgOHgJji56sm6KLi6i7oUdBVcRfAE4g2cdHD3ABIUHERw
+        XwAAEV8B9tOzIAAAALZJREFUOE/t1DEKwjAUgOHgJji56sm6KLi6i7oUdBVcRfAE4g2cdHD3ABIUHERw
         clCx/k8shJBgLV0CPvggtI+fUmhVOKO1jnBG4nBC/bP6fVguoY+RZYIrJLpFDVWPShprYo2NwwJt3GE/
         te2JmQQvxkWXKVroeHSxhAQfEnRFTLIo79bniAZWSLIEs9hhIOeiggfEcv4HcwsneCsy2MNYgvIluJZ+
         sUc5/TnMjRt5Dd+xAEapFy1/MirIFbXsAAAAAElFTkSuQmCC
@@ -327,7 +327,7 @@
   <data name="btDeleteImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        YAAAD2ABenhFjQAAAEdJREFUOE9jGAWjYDCAhw8fugDxWiDeRiFeA8QuIANfAvF/KuGXIAPfowlSgt+D
+        XwAAD18B14rayQAAAEdJREFUOE9jGAWjYDCAhw8fugDxWiDeRiFeA8QuIANfAvF/KuGXIAPfowlSgt+D
         DAwC4i1AjM0bpGCQGUHQkBwFo2AAAQMDAB1nFTm3vZtRAAAAAElFTkSuQmCC
 </value>
   </data>
