@@ -52,6 +52,12 @@
     <Compile Include="AltaItemsForm.designer.cs">
       <DependentUpon>AltaItemsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCategoriaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoriaMarca.Designer.cs">
+      <DependentUpon>FormCategoriaMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AltaItemsForm.resx">
       <DependentUpon>AltaItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategoriaMarca.resx">
+      <DependentUpon>FormCategoriaMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
