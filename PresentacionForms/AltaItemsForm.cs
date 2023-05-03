@@ -114,9 +114,8 @@ namespace PresentacionForms
                     imagenes.Vaciar(articulo.Id);
                     //Luego cargo a la db las url que esten en la listbox
                     List<string> listaurls = lbxURL.Items.Cast<string>().ToList();
-                    imagenes.Agregar(listaurls, articulo.Id);
-                    
-                    //Ver si cómo agregar la opción de borrar las existentes. Por ahora sólo permite agregar nuevas.
+                    imagenes.Agregar(listaurls, articulo.Id);                    
+                
                     MessageBox.Show("Modificacion Exitosa");
                 }
                 else

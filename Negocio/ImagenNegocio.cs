@@ -103,9 +103,9 @@ namespace Negocio
             finally { 
                 datos.cerrarConexion(); 
             }
-
-
         }
+
+
         public void modificar(Imagen nuevo)
         {
             AccesoDatos datos = new AccesoDatos();

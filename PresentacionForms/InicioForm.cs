@@ -190,7 +190,7 @@ namespace PresentacionForms
                     cargar();
 
                     //Al eliminar el artículo, se borran las imágenes del mismo de la tabla de imágenes.
-                    negocioImg.eliminarPorArticulo(idArticulo);
+                    negocioImg.Vaciar(idArticulo);
                 }
             }
             catch (Exception ex)
@@ -243,9 +243,27 @@ namespace PresentacionForms
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-
+            /*
             //Se carga la DGV con los resultados del filtro aplicado.
             DgvListaPrincipal.DataSource = negocio.filtrar(cbxCampo.SelectedItem.ToString(),cbxCriterio.SelectedItem.ToString(),txtFiltro.Text);
+            */
+            try
+            {
+                if (validarFiltro())
+                    return;
+
+                string campo = cbxCampo.SelectedItem.ToString();
+                string criterio = cbxCriterio.SelectedItem.ToString();
+                string filtro = txtFiltro.Text;
+
+                //Se carga la DGV con los resultados del filtro aplicado.
+                DgvListaPrincipal.DataSource = negocio.filtrar(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
 
