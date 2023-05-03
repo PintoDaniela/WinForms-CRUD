@@ -89,7 +89,7 @@ namespace PresentacionForms
                 
                 DgvListaPrincipal.DataSource = negocio.listar();
                 ImagenNegocio imagenNegocio = new ImagenNegocio();
-                int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+                int idArticulo = Convert.ToInt32(DgvListaPrincipal.SelectedRows[0].Cells["Id"].Value);
                 EsconderColumnas();
                 picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
                 indiceImagen = 0;
@@ -120,21 +120,33 @@ namespace PresentacionForms
         private void DgvListaPrincipal_SelectionChanged(object sender, EventArgs e)
         {
             ImagenNegocio imagenNegocio = new ImagenNegocio();
-            int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
-            txtMostrarDescripcion.Text = DgvListaPrincipal.CurrentRow.Cells["Descripcion"].Value.ToString();
-            List<Imagen> imagenesRelacionadas = imagenNegocio.listar(idArticulo);
-            if (imagenesRelacionadas.Count > 0)
+
+            if (DgvListaPrincipal.CurrentRow != null) // verifica si la fila actual es nula
             {
-                picImagen.ImageLocation = imagenesRelacionadas[0].ImagenUrl;
-                indiceImagen = 0;
+                int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+                txtMostrarDescripcion.Text = DgvListaPrincipal.CurrentRow.Cells["Descripcion"].Value.ToString();
+                List<Imagen> imagenesRelacionadas = imagenNegocio.listar(idArticulo);
+
+                if (imagenesRelacionadas.Count > 0)
+                {
+                    picImagen.ImageLocation = imagenesRelacionadas[0].ImagenUrl;
+                    indiceImagen = 0;
+                }
+                else
+                {
+                    picImagen.ImageLocation = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY2wAld_bToqR1Ox1hEhlMwrcwOGWeiDBcYbVDTiY&s";
+                }
             }
             else
             {
-                // Si no hay imágenes relacionadas con el idArticulo en la tabla, podrías mostrar una imagen predeterminada o borrar la imagen actual              
-                picImagen.ImageLocation = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY2wAld_bToqR1Ox1hEhlMwrcwOGWeiDBcYbVDTiY&s";
+                // Si la fila actual es nula, selecciona la primera fila
+                if (DgvListaPrincipal.Rows.Count > 0)
+                {
+                    DgvListaPrincipal.Rows[0].Selected = true;
+                }
             }
-
         }
+
 
         private void btnAtrasImagen_Click(object sender, EventArgs e)
         {

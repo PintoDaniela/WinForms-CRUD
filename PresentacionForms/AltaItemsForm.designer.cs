@@ -55,6 +55,8 @@
             this.menuURL = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.eliminarImagenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btAddImg = new System.Windows.Forms.Button();
+            this.btCarpeta = new System.Windows.Forms.Button();
+            this.btDeleteImg = new System.Windows.Forms.Button();
             this.panelSup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCerrar)).BeginInit();
@@ -249,7 +251,7 @@
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbTitulo.Location = new System.Drawing.Point(196, 64);
+            this.lbTitulo.Location = new System.Drawing.Point(346, 68);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(221, 45);
@@ -261,7 +263,7 @@
             this.lbImagenURL.AutoSize = true;
             this.lbImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbImagenURL.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbImagenURL.Location = new System.Drawing.Point(592, 471);
+            this.lbImagenURL.Location = new System.Drawing.Point(592, 468);
             this.lbImagenURL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbImagenURL.Name = "lbImagenURL";
             this.lbImagenURL.Size = new System.Drawing.Size(140, 25);
@@ -272,7 +274,7 @@
             // txbImagenURL
             // 
             this.txbImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txbImagenURL.Location = new System.Drawing.Point(514, 501);
+            this.txbImagenURL.Location = new System.Drawing.Point(514, 495);
             this.txbImagenURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbImagenURL.MaxLength = 2000;
             this.txbImagenURL.Name = "txbImagenURL";
@@ -344,13 +346,35 @@
             // 
             this.btAddImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAddImg.Image = ((System.Drawing.Image)(resources.GetObject("btAddImg.Image")));
-            this.btAddImg.Location = new System.Drawing.Point(724, 541);
+            this.btAddImg.Location = new System.Drawing.Point(767, 533);
             this.btAddImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAddImg.Name = "btAddImg";
-            this.btAddImg.Size = new System.Drawing.Size(47, 40);
+            this.btAddImg.Size = new System.Drawing.Size(53, 49);
             this.btAddImg.TabIndex = 16;
             this.btAddImg.UseVisualStyleBackColor = true;
             this.btAddImg.Click += new System.EventHandler(this.btAddImg_Click);
+            // 
+            // btCarpeta
+            // 
+            this.btCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCarpeta.Image = ((System.Drawing.Image)(resources.GetObject("btCarpeta.Image")));
+            this.btCarpeta.Location = new System.Drawing.Point(639, 533);
+            this.btCarpeta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btCarpeta.Name = "btCarpeta";
+            this.btCarpeta.Size = new System.Drawing.Size(53, 49);
+            this.btCarpeta.TabIndex = 17;
+            this.btCarpeta.UseVisualStyleBackColor = true;
+            // 
+            // btDeleteImg
+            // 
+            this.btDeleteImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDeleteImg.Image = ((System.Drawing.Image)(resources.GetObject("btDeleteImg.Image")));
+            this.btDeleteImg.Location = new System.Drawing.Point(514, 533);
+            this.btDeleteImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btDeleteImg.Name = "btDeleteImg";
+            this.btDeleteImg.Size = new System.Drawing.Size(53, 49);
+            this.btDeleteImg.TabIndex = 18;
+            this.btDeleteImg.UseVisualStyleBackColor = true;
             // 
             // AltaItemsForm
             // 
@@ -358,7 +382,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(113)))));
             this.CancelButton = this.btCancelar;
-            this.ClientSize = new System.Drawing.Size(868, 795);
+            this.ClientSize = new System.Drawing.Size(868, 820);
+            this.Controls.Add(this.btDeleteImg);
+            this.Controls.Add(this.btCarpeta);
             this.Controls.Add(this.btAddImg);
             this.Controls.Add(this.lbxURL);
             this.Controls.Add(this.txbCodigo);
@@ -426,5 +452,7 @@
         private System.Windows.Forms.Button btAddImg;
         private System.Windows.Forms.ContextMenuStrip menuURL;
         private System.Windows.Forms.ToolStripMenuItem eliminarImagenToolStripMenuItem;
+        private System.Windows.Forms.Button btCarpeta;
+        private System.Windows.Forms.Button btDeleteImg;
     }
 }
