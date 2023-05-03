@@ -57,7 +57,11 @@ namespace Negocio
             {   
                 throw ex;
             }
+            finally { 
+                datos.cerrarConexion();
+            }
         }
+
 
         public void Agregar(List<string> lista, int idArticulo)
         {
@@ -77,7 +81,9 @@ namespace Negocio
 
                 throw ex;
             }
-            finally { datos.cerrarConexion(); }
+            finally { 
+                datos.cerrarConexion(); 
+            }
         }
 
 
@@ -94,7 +100,10 @@ namespace Negocio
 
                 throw ex;
             }
-            finally { datos.cerrarConexion(); }
+            finally { 
+                datos.cerrarConexion(); 
+            }
+
 
         }
         public void modificar(Imagen nuevo)
@@ -111,8 +120,11 @@ namespace Negocio
             {
                 throw ex;
             }
-            finally { datos.cerrarConexion(); }
+            finally { 
+                datos.cerrarConexion(); 
+            }
         }
+
 
         public void eliminar(int id)
         {
@@ -126,8 +138,11 @@ namespace Negocio
             {
                 throw ex;
             }
-            finally { datos.cerrarConexion(); }
+            finally { 
+                datos.cerrarConexion(); 
+            }
         }
+
 
         public void eliminarPorArticulo(int idArticulo)
         {
@@ -141,7 +156,9 @@ namespace Negocio
             {
                 throw ex;
             }
-            finally { datos.cerrarConexion(); }
+            finally { 
+                datos.cerrarConexion(); 
+            }
         }
     }
 }
