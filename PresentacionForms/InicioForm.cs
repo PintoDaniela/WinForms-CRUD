@@ -34,10 +34,11 @@ namespace PresentacionForms
             //Load();
             InitializeComponent();
         }
-        //private void Load()
-        //{
-
-        //}
+        private void EsconderColumnas()
+        {
+            DgvListaPrincipal.Columns["Id"].Visible = false;
+            DgvListaPrincipal.Columns["Descripcion"].Visible = false;
+        }
 
         private void PicBoxCerrar_Click(object sender, EventArgs e)
         {
@@ -85,9 +86,11 @@ namespace PresentacionForms
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
+                
                 DgvListaPrincipal.DataSource = negocio.listar();
                 ImagenNegocio imagenNegocio = new ImagenNegocio();
                 int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+                EsconderColumnas();
                 picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
                 indiceImagen = 0;
             }
@@ -118,6 +121,7 @@ namespace PresentacionForms
         {
             ImagenNegocio imagenNegocio = new ImagenNegocio();
             int idArticulo = Convert.ToInt32(DgvListaPrincipal.CurrentRow.Cells["Id"].Value.ToString());
+            txtMostrarDescripcion.Text = DgvListaPrincipal.CurrentRow.Cells["Descripcion"].Value.ToString();
             List<Imagen> imagenesRelacionadas = imagenNegocio.listar(idArticulo);
             if (imagenesRelacionadas.Count > 0)
             {
