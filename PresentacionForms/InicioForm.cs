@@ -134,7 +134,8 @@ namespace PresentacionForms
                 }
                 else
                 {
-                    picImagen.ImageLocation = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY2wAld_bToqR1Ox1hEhlMwrcwOGWeiDBcYbVDTiY&s";
+                    //Si no hay imágenes cargadas, se muestra el placeholder:
+                    picImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
                 }
             }
             else
@@ -259,10 +260,7 @@ namespace PresentacionForms
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
-            /*
-            //Se carga la DGV con los resultados del filtro aplicado.
-            DgvListaPrincipal.DataSource = negocio.filtrar(cbxCampo.SelectedItem.ToString(),cbxCriterio.SelectedItem.ToString(),txtFiltro.Text);
-            */
+           
             try
             {
                 if (validarFiltro())

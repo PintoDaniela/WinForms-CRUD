@@ -558,10 +558,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picImagen.ErrorImage")));
-            this.picImagen.Location = new System.Drawing.Point(688, 26);
+            this.picImagen.Location = new System.Drawing.Point(716, 26);
             this.picImagen.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.picImagen.Name = "picImagen";
-            this.picImagen.Size = new System.Drawing.Size(254, 210);
+            this.picImagen.Size = new System.Drawing.Size(203, 210);
             this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picImagen.TabIndex = 1;
             this.picImagen.TabStop = false;

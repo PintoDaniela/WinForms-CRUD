@@ -166,8 +166,9 @@ namespace PresentacionForms
                 pbImagen.ImageLocation = lbxURL.SelectedItem.ToString();
             }
             else
-            {                              //placeholder
-                pbImagen.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
+            {                              
+                //Si el artículo no tiene imagen o esttá rota la url, se muestra un placeholder
+                pbImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
             }
         }
 

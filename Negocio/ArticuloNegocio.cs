@@ -69,10 +69,8 @@ namespace Negocio
             }
         }
 
-
-        //MODIFICAR:
-        //Falta metodo para modificar imagen desde ImagenNegocio
-        //Se podría permitir agregar Marca y categoría en caso de que se quieramodificar por una inexistente en la DB
+              
+       
         public void Modificar(Articulo articulo) 
         {
             AccesoDatos datos = new AccesoDatos();
