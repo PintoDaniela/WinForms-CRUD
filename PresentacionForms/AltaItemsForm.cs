@@ -104,14 +104,16 @@ namespace PresentacionForms
                 if (articulo == null)
                     articulo = new Articulo();
 
-                articulo.Codigo = (string)txbCodigo.Text;
-                articulo.Nombre = (string)txbNombre.Text;
-                articulo.Descripcion = (string)txbDescripcion.Text;
-                articulo.Precio = decimal.Parse(txbPrecio.Text);
-                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
-                articulo.Marca = (Marca)cbxMarca.SelectedItem;
-                if (Validar())
+                //Valido los datos antes de asignar los valores de los campos al artículo
+                if (Validar())     
                 {
+                    articulo.Codigo = (string)txbCodigo.Text;
+                    articulo.Nombre = (string)txbNombre.Text;
+                    articulo.Descripcion = (string)txbDescripcion.Text;
+                    articulo.Precio = decimal.Parse(txbPrecio.Text);
+                    articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
+                    articulo.Marca = (Marca)cbxMarca.SelectedItem;
+
                     if (articulo.Id != 0)
                     {
                         negocio.Modificar(articulo);
@@ -136,7 +138,6 @@ namespace PresentacionForms
 
                     }
                     this.Close();
-
                 }
             }
             catch (Exception ex)
@@ -150,7 +151,6 @@ namespace PresentacionForms
             lbxURL.Items.Add(txbImagenURL.Text);
             pbImagen.ImageLocation = lbxURL.Items[lbxURL.Items.Count - 1].ToString();
             txbImagenURL.Text = "";
-
         }
 
         private void eliminarImagenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,8 +186,7 @@ namespace PresentacionForms
         }
         //validacion de codigo
         private bool Validar()
-        {
-            
+        {            
             errorProvNombre.Clear();           
             erorProvPrecio.Clear();
             errorProvDescripcion.Clear();
@@ -221,7 +220,6 @@ namespace PresentacionForms
                 errorProviderUrl.SetError(txbImagenURL, "Minimo 10 carácteres");
                 return false;
             }
-
             return true;
         }
 
