@@ -6,9 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PresentacionForms
 {
@@ -20,25 +23,26 @@ namespace PresentacionForms
         public AltaItemsForm()
         {
             InitializeComponent();
-            Load();
+            CargarDatos();
         }
-        
+
         public AltaItemsForm(Articulo art)
         {
             articulo = art;
             InitializeComponent();
-            Load();
+            CargarDatos();
         }
 
         //CARGA EL DROPDOWN LIST DE CATEGORIAS CON LAS OPCIONES DISPONIBLES
-        private void Load()
-        {   
+        private void CargarDatos()
+        {
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             cbxCategoria.DataSource = categoriaNegocio.Listar();
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             cbxMarca.DataSource = marcaNegocio.Listar();
 
-            if(articulo != null) {
+            if (articulo != null)
+            {
                 lbTitulo.Text = "MODIFICAR";
                 btAgregar.Text = "Modificar";
                 //Muestro en los controles, los valores que tiene actualmente el objeto
@@ -56,7 +60,7 @@ namespace PresentacionForms
                 Imagen img = new Imagen();
                 if (imagenes.listar(articulo.Id).Count() > 0)
                 {
-                    img=imagenes.listar(articulo.Id)[0];
+                    img = imagenes.listar(articulo.Id)[0];
                     pbImagen.ImageLocation = img.ImagenUrl;
                 }
                 else
@@ -65,13 +69,13 @@ namespace PresentacionForms
 
                 }
                 //Cargo las Imagenes que contenga el Articulo a Modificar en la list box.
-                List<Imagen> imglist = new List<Imagen>(); 
-                imglist=imagenes.listar(articulo.Id);
+                List<Imagen> imglist = new List<Imagen>();
+                imglist = imagenes.listar(articulo.Id);
                 foreach (Imagen imagen in imglist)
                 {
                     lbxURL.Items.Add(imagen.ImagenUrl);
                 }
-                
+
             }
             else
             {
@@ -94,8 +98,8 @@ namespace PresentacionForms
         {
             ArticuloNegocio negocio = new ArticuloNegocio();
             ImagenNegocio imagenes = new ImagenNegocio();
-            
-            try 
+
+            try
             {
                 if (articulo == null)
                     articulo = new Articulo();
@@ -106,34 +110,36 @@ namespace PresentacionForms
                 articulo.Precio = decimal.Parse(txbPrecio.Text);
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
-                
-                if(articulo.Id != 0)
+                if (Validar())
                 {
-                    negocio.Modificar(articulo);
-                    //vacio los registros de imagenes para este articulo
-                    imagenes.Vaciar(articulo.Id);
-                    //Luego cargo a la db las url que esten en la listbox
-                    List<string> listaurls = lbxURL.Items.Cast<string>().ToList();
-                    imagenes.Agregar(listaurls, articulo.Id);                    
-                
-                    MessageBox.Show("Modificacion Exitosa");
-                }
-                else
-                {
-                    negocio.Agregar(articulo);
-                    //Agrego Imagenes a Articulo (si tiene)
-                    int ultimo = negocio.listar().Count()-1;
-                    Articulo articuloaux = negocio.listar()[ultimo];
-                    List<string> listaurls =lbxURL.Items.Cast<string>().ToList();
-                    imagenes.Agregar(listaurls, articuloaux.Id);
+                    if (articulo.Id != 0)
+                    {
+                        negocio.Modificar(articulo);
+                        //vacio los registros de imagenes para este articulo
+                        imagenes.Vaciar(articulo.Id);
+                        //Luego cargo a la db las url que esten en la listbox
+                        List<string> listaurls = lbxURL.Items.Cast<string>().ToList();
+                        imagenes.Agregar(listaurls, articulo.Id);
 
-                   
-                    MessageBox.Show("Alta exitosa");
-                    
+                        MessageBox.Show("Modificacion Exitosa");
+                    }
+                    else
+                    {
+                        negocio.Agregar(articulo);
+                        //Agrego Imagenes a Articulo (si tiene)
+                        int ultimo = negocio.listar().Count() - 1;
+                        Articulo articuloaux = negocio.listar()[ultimo];
+                        List<string> listaurls = lbxURL.Items.Cast<string>().ToList();
+                        imagenes.Agregar(listaurls, articuloaux.Id);
+
+                        MessageBox.Show("Alta exitosa");
+
+                    }
+                    this.Close();
+
                 }
-                this.Close();
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -144,17 +150,18 @@ namespace PresentacionForms
             lbxURL.Items.Add(txbImagenURL.Text);
             pbImagen.ImageLocation = lbxURL.Items[lbxURL.Items.Count - 1].ToString();
             txbImagenURL.Text = "";
-            
+
         }
 
         private void eliminarImagenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                lbxURL.Items.Remove(lbxURL.SelectedItem);
+            lbxURL.Items.Remove(lbxURL.SelectedItem);
         }
 
         private void lbxURL_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Delete) {
+            if (e.KeyCode == Keys.Delete)
+            {
                 lbxURL.Items.Remove(lbxURL.SelectedItem);
             }
         }
@@ -166,7 +173,7 @@ namespace PresentacionForms
                 pbImagen.ImageLocation = lbxURL.SelectedItem.ToString();
             }
             else
-            {                              
+            {
                 //Si el artículo no tiene imagen o esttá rota la url, se muestra un placeholder
                 pbImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
             }
@@ -177,7 +184,24 @@ namespace PresentacionForms
         {
             this.Close();
         }
+        //validacion de codigo
+        private bool Validar()
+        {
+            errorProvCodigo.Clear();
+            Regex regex = new Regex(@"^[A-Z]\d{2}$"); // Expresión regular para validar letra mayúscula seguida de dos números
+            if (txbNombre.Text.Length < 3)
+            {
+                errorProvNombre.SetError(txbNombre, "Minimo 3 carácteres");
+                return false;
+            }
+            if (!regex.IsMatch(txbCodigo.Text))
+            {
+                errorProvNombre.Clear();
+                errorProvCodigo.SetError(txbCodigo, "Debe contener una Mayúscula seguida de dos números");
+                return false;
+            }
+
+            return true;
+        }
     }
-
-
 }

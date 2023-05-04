@@ -304,9 +304,6 @@
         UCn/YWkgAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="menuURL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="btAddImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAR
@@ -318,7 +315,7 @@
   <data name="btCarpeta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAR
-        XwAAEV8B9tOzIAAAALZJREFUOE/t1DEKwjAUgOHgJji56sm6KLi6i7oUdBVcRfAE4g2cdHD3ABIUHERw
+        XQAAEV0BiS1wqQAAALZJREFUOE/t1DEKwjAUgOHgJji56sm6KLi6i7oUdBVcRfAE4g2cdHD3ABIUHERw
         clCx/k8shJBgLV0CPvggtI+fUmhVOKO1jnBG4nBC/bP6fVguoY+RZYIrJLpFDVWPShprYo2NwwJt3GE/
         te2JmQQvxkWXKVroeHSxhAQfEnRFTLIo79bniAZWSLIEs9hhIOeiggfEcv4HcwsneCsy2MNYgvIluJZ+
         sUc5/TnMjRt5Dd+xAEapFy1/MirIFbXsAAAAAElFTkSuQmCC
@@ -327,8 +324,23 @@
   <data name="btDeleteImg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAP
-        XwAAD18B14rayQAAAEdJREFUOE9jGAWjYDCAhw8fugDxWiDeRiFeA8QuIANfAvF/KuGXIAPfowlSgt+D
+        XgAAD14BBc04LQAAAEdJREFUOE9jGAWjYDCAhw8fugDxWiDeRiFeA8QuIANfAvF/KuGXIAPfowlSgt+D
         DAwC4i1AjM0bpGCQGUHQkBwFo2AAAQMDAB1nFTm3vZtRAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="errorProvNombre.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>18, 18</value>
+  </metadata>
+  <metadata name="errorProvCodigo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>224, 18</value>
+  </metadata>
+  <metadata name="erorProvPrecio.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>421, 18</value>
+  </metadata>
+  <metadata name="errorProvDescripcion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>603, 18</value>
+  </metadata>
+  <metadata name="errorProviderUrl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>836, 18</value>
+  </metadata>
 </root>
