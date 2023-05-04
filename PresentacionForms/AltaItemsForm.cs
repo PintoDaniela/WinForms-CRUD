@@ -187,23 +187,38 @@ namespace PresentacionForms
         //validacion de codigo
         private bool Validar()
         {
-            errorProvCodigo.Clear();
-            Regex regex = new Regex(@"^[A-Z]\d{2}$"); // Expresión regular para validar letra mayúscula seguida de dos números
+            
+            errorProvNombre.Clear();           
+            erorProvPrecio.Clear();
+            errorProvDescripcion.Clear();
+            errorProvCodigo.Clear();            
+            errorProviderUrl.Clear();   
+            Regex regexCodigo = new Regex(@"^[A-Z]\d{2}$"); // Expresión regular para validar letra mayúscula seguida de dos números
+           
+            
             if (txbNombre.Text.Length < 3)
             {
                 errorProvNombre.SetError(txbNombre, "Minimo 3 carácteres");
                 return false;
             }
-            if (!regex.IsMatch(txbCodigo.Text))
-            {
-                errorProvNombre.Clear();
+            if (!(soloNumeros(txbPrecio.Text)))
+            {               
+                erorProvPrecio.SetError(txbPrecio, "Debe ingresar sólo valores numéricos.");
+                return false;
+            }
+            if (txbDescripcion.Text.Length < 10)
+            {                
+                errorProvDescripcion.SetError(txbDescripcion, "Minimo 10 carácteres");
+                return false;
+            }
+            if (!regexCodigo.IsMatch(txbCodigo.Text))
+            {                
                 errorProvCodigo.SetError(txbCodigo, "Debe contener una Mayúscula seguida de dos números");
                 return false;
             }
-            if (!(soloNumeros(txbPrecio.Text)))
+            if (txbImagenURL.Text.Length < 10 && txbImagenURL.Text.Length != 0)
             {
-                // errorProvPrecio.SetError(txbPrecio, "Debe ingresar sólo valores numéricos.");
-                MessageBox.Show("Debe ingresar un valor numérico");
+                errorProviderUrl.SetError(txbImagenURL, "Minimo 10 carácteres");
                 return false;
             }
 
@@ -212,12 +227,14 @@ namespace PresentacionForms
 
         private bool soloNumeros(string cadena)
         {
-            foreach (char caracter in cadena)
+            try
             {
-                if (!(char.IsNumber(caracter)))
-                    return false;
+                decimal.Parse(cadena);
+                return true;
             }
-            return true;
+            catch { 
+                return false; 
+            }
         }
 
     }
