@@ -33,6 +33,7 @@ namespace PresentacionForms
         {
             //Load();
             InitializeComponent();
+            cargar();
         }
         private void EsconderColumnas()
         {
@@ -86,19 +87,23 @@ namespace PresentacionForms
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-                
                 DgvListaPrincipal.DataSource = negocio.listar();
-                ImagenNegocio imagenNegocio = new ImagenNegocio();
-                int idArticulo = Convert.ToInt32(DgvListaPrincipal.SelectedRows[0].Cells["Id"].Value);
                 EsconderColumnas();
-                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
-                indiceImagen = 0;
+                if (DgvListaPrincipal.Rows.Count > 0)
+                {
+                    DgvListaPrincipal.Rows[0].Selected = true;
+                    int idArticulo = Convert.ToInt32(DgvListaPrincipal.SelectedRows[0].Cells["Id"].Value);
+                    ImagenNegocio imagenNegocio = new ImagenNegocio();
+                    picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
+                    indiceImagen = 0;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
+
         private void Ventana_FormClosed(object sender, FormClosedEventArgs e)
         {
             cargar();

@@ -561,6 +561,7 @@
             this.picImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picImagen.ErrorImage")));
             this.picImagen.Location = new System.Drawing.Point(806, 32);
             this.picImagen.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.picImagen.MaximumSize = new System.Drawing.Size(400, 480);
             this.picImagen.Name = "picImagen";
             this.picImagen.Size = new System.Drawing.Size(228, 262);
             this.picImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -576,6 +577,7 @@
             this.DgvListaPrincipal.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvListaPrincipal.Location = new System.Drawing.Point(21, 32);
             this.DgvListaPrincipal.Margin = new System.Windows.Forms.Padding(30, 31, 30, 31);
+            this.DgvListaPrincipal.MaximumSize = new System.Drawing.Size(1200, 542);
             this.DgvListaPrincipal.MultiSelect = false;
             this.DgvListaPrincipal.Name = "DgvListaPrincipal";
             this.DgvListaPrincipal.RowHeadersVisible = false;

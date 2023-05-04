@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
@@ -105,7 +106,7 @@ namespace PresentacionForms
                     articulo = new Articulo();
 
                 //Valido los datos antes de asignar los valores de los campos al artículo
-                if (Validar())     
+                if (Validar())
                 {
                     articulo.Codigo = (string)txbCodigo.Text;
                     articulo.Nombre = (string)txbNombre.Text;
@@ -186,32 +187,32 @@ namespace PresentacionForms
         }
         //validacion de codigo
         private bool Validar()
-        {            
-            errorProvNombre.Clear();           
+        {
+            errorProvNombre.Clear();
             erorProvPrecio.Clear();
             errorProvDescripcion.Clear();
-            errorProvCodigo.Clear();            
-            errorProviderUrl.Clear();   
+            errorProvCodigo.Clear();
+            errorProviderUrl.Clear();
             Regex regexCodigo = new Regex(@"^[A-Z]\d{2}$"); // Expresión regular para validar letra mayúscula seguida de dos números
-           
-            
+
+
             if (txbNombre.Text.Length < 3)
             {
                 errorProvNombre.SetError(txbNombre, "Minimo 3 carácteres");
                 return false;
             }
             if (!(soloNumeros(txbPrecio.Text)))
-            {               
+            {
                 erorProvPrecio.SetError(txbPrecio, "Debe ingresar sólo valores numéricos.");
                 return false;
             }
             if (txbDescripcion.Text.Length < 10)
-            {                
+            {
                 errorProvDescripcion.SetError(txbDescripcion, "Minimo 10 carácteres");
                 return false;
             }
             if (!regexCodigo.IsMatch(txbCodigo.Text))
-            {                
+            {
                 errorProvCodigo.SetError(txbCodigo, "Debe contener una Mayúscula seguida de dos números");
                 return false;
             }
@@ -230,10 +231,42 @@ namespace PresentacionForms
                 decimal.Parse(cadena);
                 return true;
             }
-            catch { 
-                return false; 
+            catch
+            {
+                return false;
             }
         }
+        private void btCarpeta_Click(object sender, EventArgs e)
+        {
+            // Crear un cuadro de diálogo de selección de archivo para imágenes
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen (*.jpg, *.png)|*.jpg;*.png";
+
+            // Mostrar el cuadro de diálogo de selección de archivo
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string nombreCarpeta = "Imagenes";
+                string rutaCarpeta = Path.Combine(Application.StartupPath, nombreCarpeta);
+
+                // Crear la carpeta "Imagenes" si no existe
+                if (!Directory.Exists(rutaCarpeta))
+                {
+                    Directory.CreateDirectory(rutaCarpeta);
+                }
+
+                // Obtener el nombre del archivo seleccionado y la ruta completa
+                string nombreArchivo = Path.GetFileNameWithoutExtension(openFileDialog.FileName);
+                string extensionArchivo = Path.GetExtension(openFileDialog.FileName);
+                string rutaCompletaArchivo = Path.Combine(rutaCarpeta, $"{nombreArchivo}_{DateTime.Now.ToString("yyyyMMdd_HHmmss")}{extensionArchivo}");
+
+                // Guardar el archivo en la carpeta "Imagenes"
+                File.Copy(openFileDialog.FileName, rutaCompletaArchivo, true);
+
+                // Agregar la ruta completa del archivo al ListBox
+                lbxURL.Items.Add(rutaCompletaArchivo);
+            }
+        }
+
 
     }
 }
