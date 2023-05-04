@@ -200,8 +200,25 @@ namespace PresentacionForms
                 errorProvCodigo.SetError(txbCodigo, "Debe contener una Mayúscula seguida de dos números");
                 return false;
             }
+            if (!(soloNumeros(txbPrecio.Text)))
+            {
+                // errorProvPrecio.SetError(txbPrecio, "Debe ingresar sólo valores numéricos.");
+                MessageBox.Show("Debe ingresar un valor numérico");
+                return false;
+            }
 
             return true;
         }
+
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)))
+                    return false;
+            }
+            return true;
+        }
+
     }
 }
