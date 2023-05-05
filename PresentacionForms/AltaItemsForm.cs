@@ -66,8 +66,18 @@ namespace PresentacionForms
                     pbImagen.ImageLocation = img.ImagenUrl;
                 }
                 else
-                {   //placeholder en Modificar
-                    pbImagen.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
+                {   
+
+                    // Suscripción al evento LoadCompleted
+                    pbImagen.LoadCompleted += (sender, e) =>
+                    {
+                        if (e.Error != null)
+                        {
+                            // Si hubo un error al cargar la imagen, asigna la URL predeterminada
+                            pbImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
+                        }
+                    };
+
 
                 }
                 //Cargo las Imagenes que contenga el Articulo a Modificar en la list box.
@@ -82,7 +92,8 @@ namespace PresentacionForms
             else
             {
                 //Agrego placeholder en Agregar
-                pbImagen.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1200px-Placeholder_view_vector.svg.png";
+                pbImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
+
             }
         }
 

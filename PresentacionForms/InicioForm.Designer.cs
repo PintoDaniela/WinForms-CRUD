@@ -525,7 +525,7 @@
             this.picImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picImagen.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picImagen.ErrorImage")));
+            this.picImagen.ErrorImage = null;
             this.picImagen.Location = new System.Drawing.Point(806, 32);
             this.picImagen.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.picImagen.MaximumSize = new System.Drawing.Size(400, 480);

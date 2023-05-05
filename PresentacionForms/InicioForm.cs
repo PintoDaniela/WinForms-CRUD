@@ -72,13 +72,25 @@ namespace PresentacionForms
             try
             {
                 DgvListaPrincipal.DataSource = negocio.listar();
+                DgvListaPrincipal.Columns["Precio"].DefaultCellStyle.Format = "0.00##";
                 EsconderColumnas();
                 if (DgvListaPrincipal.Rows.Count > 0)
                 {
                     DgvListaPrincipal.Rows[0].Selected = true;
                     int idArticulo = Convert.ToInt32(DgvListaPrincipal.SelectedRows[0].Cells["Id"].Value);
                     ImagenNegocio imagenNegocio = new ImagenNegocio();
+
                     picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
+
+                    // Suscripción al evento LoadCompleted
+                    picImagen.LoadCompleted += (sender, e) =>
+                    {
+                        if (e.Error != null)
+                        {
+                            // Si hubo un error al cargar la imagen, asigna la URL predeterminada
+                            picImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
+                        }
+                    };
                     indiceImagen = 0;
                 }
             }
@@ -252,9 +264,13 @@ namespace PresentacionForms
            
             try
             {
+                if(txtFiltro.Text == "")
+                {
+                    DgvListaPrincipal.DataSource = negocio.listar();
+                    return;
+                }
                 if (validarFiltro())
                     return;
-
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
                 if (campo == "Precio")
