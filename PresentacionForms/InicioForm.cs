@@ -327,7 +327,13 @@ namespace PresentacionForms
 
         private void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
-            FormCategoriaMarca ventana = new FormCategoriaMarca();
+            FormCategoriaMarca ventana = new FormCategoriaMarca("Categoria");
+            ventana.Show();
+        }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            FormCategoriaMarca ventana = new FormCategoriaMarca("Marca");
             ventana.Show();
         }
     }

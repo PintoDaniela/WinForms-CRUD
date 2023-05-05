@@ -52,5 +52,6 @@ namespace Negocio
             }
             finally { datos.cerrarConexion(); }
         }
+      
     }
 }

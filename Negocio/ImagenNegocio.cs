@@ -74,12 +74,13 @@ namespace Negocio
                     string valores = "values (" + idArticulo + " ,'" + item + "')";
                     datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl)" + valores);
                     datos.ejecutarAccion();
+                    datos.cerrarConexion();
                 }
             }
             catch (Exception ex)
             {
 
-                throw ex;
+               throw ex;
             }
             finally { 
                 datos.cerrarConexion(); 

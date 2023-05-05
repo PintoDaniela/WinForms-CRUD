@@ -37,17 +37,44 @@ namespace PresentacionForms
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (Text == "Categoria")
+            {
                 CategoriaNegocio catNegocio = new CategoriaNegocio();
-            try
-            {
-                catNegocio.Agregar(txtIngresoCateogoria.Text);
-                MessageBox.Show("Alta exitosa");
-                this.Close();
+                try
+                {
+                    catNegocio.Agregar(txtIngresoCateogoria.Text);
+                    MessageBox.Show("Alta exitosa");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                throw ex;
+                MarcaNegocio marcaNegocio = new MarcaNegocio();
+                try
+                {
+                    marcaNegocio.Agregar(txtIngresoCateogoria.Text);
+                    MessageBox.Show("Alta exitosa");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
+        public FormCategoriaMarca(string seleccion) {
+        
+            InitializeComponent();
+            Text = seleccion;
+            lbCategoria.Text = Text;
+            lbTitulo.Text = "Agregar " + seleccion;
+           
+        }
     }
+
 }
