@@ -37,6 +37,7 @@ namespace PresentacionForms
         //CARGA EL DROPDOWN LIST DE CATEGORIAS CON LAS OPCIONES DISPONIBLES
         private void CargarDatos()
         {
+            this.MaximumSize = this.MinimumSize = this.Size;
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
             cbxCategoria.DataSource = categoriaNegocio.Listar();
             MarcaNegocio marcaNegocio = new MarcaNegocio();

@@ -45,26 +45,10 @@ namespace PresentacionForms
         {
             Application.Exit();
         }
-
-        private void PicBoxMaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            PicBoxMaximizar.Visible = false;
-            picBoxRestaurar.Visible = true;
-        }
-
         private void picBoxMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void picBoxRestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            PicBoxMaximizar.Visible = true;
-            picBoxRestaurar.Visible = false;
-        }
-
         private void PanelSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
