@@ -207,6 +207,12 @@ namespace PresentacionForms
                 erorProvPrecio.SetError(txbPrecio, "Debe ingresar sólo valores numéricos.");
                 return false;
             }
+            if (!(separaPorComa(txbPrecio.Text)))           
+            {
+                erorProvPrecio.SetError(txbPrecio, "Use la coma ',' para separar los decimales.");
+                return false;
+            }
+            
             if (txbDescripcion.Text.Length < 10)
             {
                 errorProvDescripcion.SetError(txbDescripcion, "Minimo 10 carácteres");
@@ -226,7 +232,7 @@ namespace PresentacionForms
         }
 
         private bool soloNumeros(string cadena)
-        {
+        {            
             try
             {
                 decimal.Parse(cadena);
@@ -237,7 +243,19 @@ namespace PresentacionForms
                 return false;
             }
         }
-        private void btCarpeta_Click(object sender, EventArgs e)
+
+        private bool separaPorComa(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (caracter == '.')
+                    return false;
+            }
+            return true;
+        }
+       
+
+    private void btCarpeta_Click(object sender, EventArgs e)
         {
             // Crear un cuadro de diálogo de selección de archivo para imágenes
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -268,6 +286,6 @@ namespace PresentacionForms
             }
         }
 
-
+       
     }
 }

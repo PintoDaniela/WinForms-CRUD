@@ -257,7 +257,11 @@ namespace PresentacionForms
 
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
-                string filtro = txtFiltro.Text;
+                if (campo == "Precio")
+                {
+                    decimal.Parse(txtFiltro.Text);
+                }
+                string filtro = txtFiltro.Text.ToString();
 
                 //Se carga la DGV con los resultados del filtro aplicado.
                 DgvListaPrincipal.DataSource = negocio.filtrar(campo, criterio, filtro);
@@ -287,23 +291,41 @@ namespace PresentacionForms
             {
                 if (string.IsNullOrEmpty(txtFiltro.Text))
                 {
-                    MessageBox.Show("Debes cargar el filtro para numéricos...");
+                    MessageBox.Show("Debes cargar el filtro para numéricos.");
                     return true;
                 }
                 if (!(soloNumeros(txtFiltro.Text)))
                 {
-                    MessageBox.Show("Solo nros para filtrar por un campo numérico...");
+                    MessageBox.Show("El valor ingresado debe ser numérico.");
+                    return true;
+                }
+                if (!(separaPorPunto(txtFiltro.Text)))
+                {
+                    MessageBox.Show("Por favor, use el punto para separar los decimales.");
                     return true;
                 }
             }
             return false;
         }
 
-        private bool soloNumeros(string cadena)
+         private bool soloNumeros(string cadena)
+         {            
+            try
+            {
+                decimal.Parse(cadena);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+         }
+
+        private bool separaPorPunto(string cadena)
         {
             foreach (char caracter in cadena)
             {
-                if (!(char.IsNumber(caracter)))
+                if (caracter == ',')
                     return false;
             }
             return true;
