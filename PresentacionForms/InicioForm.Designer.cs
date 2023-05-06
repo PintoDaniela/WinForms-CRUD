@@ -187,7 +187,7 @@
             this.btnAgregarMarca.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.btnAgregarMarca.Size = new System.Drawing.Size(214, 49);
             this.btnAgregarMarca.TabIndex = 8;
-            this.btnAgregarMarca.Text = "  Agregar Marca";
+            this.btnAgregarMarca.Text = "Editar Marca";
             this.btnAgregarMarca.UseVisualStyleBackColor = true;
             this.btnAgregarMarca.Click += new System.EventHandler(this.btnAgregarMarca_Click);
             // 
@@ -217,7 +217,7 @@
             this.btnAgregarCategoria.Padding = new System.Windows.Forms.Padding(26, 0, 0, 0);
             this.btnAgregarCategoria.Size = new System.Drawing.Size(214, 49);
             this.btnAgregarCategoria.TabIndex = 6;
-            this.btnAgregarCategoria.Text = "  Agregar Categoría";
+            this.btnAgregarCategoria.Text = "Editar Categoria";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
             this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
