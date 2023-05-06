@@ -53,6 +53,11 @@ namespace PresentacionForms
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if (txtIngresoCateogoria.Text.Length < 4)
+            {
+                MessageBox.Show("El nombre de la categoría debe tener al menos 4 caracteres.");
+                return;
+            }
             if (Text == "Categoria")
             {
                 CategoriaNegocio catNegocio = new CategoriaNegocio();
