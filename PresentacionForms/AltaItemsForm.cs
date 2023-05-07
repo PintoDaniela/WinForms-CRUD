@@ -64,21 +64,11 @@ namespace PresentacionForms
                 if (imagenes.listar(articulo.Id).Count() > 0)
                 {
                     img = imagenes.listar(articulo.Id)[0];
-                    pbImagen.ImageLocation = img.ImagenUrl;
+                    CargarImagen(img.ImagenUrl);
                 }
                 else
-                {   
-
-                    // Suscripción al evento LoadCompleted
-                    pbImagen.LoadCompleted += (sender, e) =>
-                    {
-                        if (e.Error != null)
-                        {
-                            // Si hubo un error al cargar la imagen, asigna la URL predeterminada
-                            pbImagen.ImageLocation = imagenDefault;
-                        }
-                    };
-
+                {
+                    CargarImagen(imagenDefault);
 
                 }
                 //Cargo las Imagenes que contenga el Articulo a Modificar en la list box.
@@ -97,6 +87,19 @@ namespace PresentacionForms
 
             }
         }
+        private void CargarImagen(string ruta)
+        {
+            pbImagen.LoadCompleted += (sender, e) =>
+            {
+                if (e.Error != null)
+                {
+                    pbImagen.ImageLocation = imagenDefault;
+                }
+            };
+
+            pbImagen.ImageLocation = ruta;
+        }
+
 
         private void picBoxMinimizar_Click(object sender, EventArgs e)
         {
@@ -193,17 +196,13 @@ namespace PresentacionForms
         {
             if (lbxURL.SelectedItem != null)
             {
-                pbImagen.LoadCompleted += (s, ev) =>
-                {
-                    if (ev.Error != null)
-                    {
-                        pbImagen.ImageLocation = imagenDefault;
-                    }
-                };
-                pbImagen.ImageLocation = lbxURL.SelectedItem.ToString();
+                CargarImagen(lbxURL.SelectedItem.ToString());
+            }
+            else
+            {
+                CargarImagen(imagenDefault);
             }
         }
-
 
         //Cierro el form de alta con el botón cancelar
         private void btCancelar_Click(object sender, EventArgs e)
@@ -307,6 +306,7 @@ namespace PresentacionForms
 
                 // Agregar la ruta completa del archivo al ListBox
                 lbxURL.Items.Add(rutaCompletaArchivo);
+                lbxURL.SelectedIndex = lbxURL.Items.Count - 1;
             }
         }
         private void btDeleteImg_Click(object sender, EventArgs e)

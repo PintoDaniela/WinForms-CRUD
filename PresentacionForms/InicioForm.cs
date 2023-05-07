@@ -25,7 +25,7 @@ namespace PresentacionForms
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         const int WM_NCLBUTTONDOWN = 0xA1;
         const int HT_CAPTION = 0x2;
-
+        string imagenDefault = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
         //para el indice de imagen
         int indiceImagen;
 
@@ -80,17 +80,8 @@ namespace PresentacionForms
                     int idArticulo = Convert.ToInt32(DgvListaPrincipal.SelectedRows[0].Cells["Id"].Value);
                     ImagenNegocio imagenNegocio = new ImagenNegocio();
 
-                    picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[0].ToString();
-
-                    // Suscripción al evento LoadCompleted
-                    picImagen.LoadCompleted += (sender, e) =>
-                    {
-                        if (e.Error != null)
-                        {
-                            // Si hubo un error al cargar la imagen, asigna la URL predeterminada
-                            picImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
-                        }
-                    };
+                    CargarImagen(imagenNegocio.listar(idArticulo)[0].ToString());
+                   
                     indiceImagen = 0;
                 }
             }
@@ -99,7 +90,18 @@ namespace PresentacionForms
                 MessageBox.Show(ex.ToString());
             }
         }
+        private void CargarImagen(string ruta)
+        {
+            picImagen.LoadCompleted += (sender, e) =>
+            {
+                if (e.Error != null)
+                {
+                    picImagen.ImageLocation = imagenDefault;
+                }
+            };
 
+            picImagen.ImageLocation = ruta;
+        }
         private void Ventana_FormClosed(object sender, FormClosedEventArgs e)
         {
             cargar();
@@ -130,13 +132,12 @@ namespace PresentacionForms
 
                 if (imagenesRelacionadas.Count > 0)
                 {
-                    picImagen.ImageLocation = imagenesRelacionadas[0].ImagenUrl;
+                    CargarImagen(imagenesRelacionadas[0].ImagenUrl);
                     indiceImagen = 0;
                 }
                 else
-                {
-                    //Si no hay imágenes cargadas, se muestra el placeholder:
-                    picImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
+                {                   //Si no hay imágenes cargadas, se muestra el placeholder:
+                    CargarImagen(imagenDefault);
                 }
             }
             else
@@ -157,7 +158,7 @@ namespace PresentacionForms
             if (indiceImagen != 0)
             {
                 indiceImagen--;
-                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[indiceImagen].ToString();
+                CargarImagen(imagenNegocio.listar(idArticulo)[indiceImagen].ToString());
             }
         }
 
@@ -170,7 +171,7 @@ namespace PresentacionForms
             if(indiceImagen != indiceMaximo && indiceMaximo>=0)
             {
                 indiceImagen++;
-                picImagen.ImageLocation = imagenNegocio.listar(idArticulo)[indiceImagen].ToString();
+                CargarImagen(imagenNegocio.listar(idArticulo)[indiceImagen].ToString());
             }
         }
 
