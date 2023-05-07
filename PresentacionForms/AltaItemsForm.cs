@@ -21,6 +21,7 @@ namespace PresentacionForms
         private Articulo articulo = null;
         // para pedirle al usuario q abra un archivo local ---> 'Agregar Imagen manualmente'
         private OpenFileDialog archivo = null;
+        string imagenDefault = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
         public AltaItemsForm()
         {
             InitializeComponent();
@@ -74,7 +75,7 @@ namespace PresentacionForms
                         if (e.Error != null)
                         {
                             // Si hubo un error al cargar la imagen, asigna la URL predeterminada
-                            pbImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
+                            pbImagen.ImageLocation = imagenDefault;
                         }
                     };
 
@@ -92,7 +93,7 @@ namespace PresentacionForms
             else
             {
                 //Agrego placeholder en Agregar
-                pbImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
+                pbImagen.ImageLocation = imagenDefault;
 
             }
         }
@@ -161,9 +162,18 @@ namespace PresentacionForms
 
         private void btAddImg_Click(object sender, EventArgs e)
         {
-            lbxURL.Items.Add(txbImagenURL.Text);
-            pbImagen.ImageLocation = lbxURL.Items[lbxURL.Items.Count - 1].ToString();
-            txbImagenURL.Text = "";
+            if (txbImagenURL.Text.Count() > 5)
+            {
+                lbxURL.Items.Add(txbImagenURL.Text);
+                pbImagen.ImageLocation = lbxURL.Items[lbxURL.Items.Count - 1].ToString();
+                txbImagenURL.Text = "";
+                lbxURL.SelectedIndex = lbxURL.Items.Count - 1;
+            }
+            else
+            {
+                MessageBox.Show("El campo debe tener un mínimo de 5 carácteres");
+            }
+          
         }
 
         private void eliminarImagenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,14 +193,17 @@ namespace PresentacionForms
         {
             if (lbxURL.SelectedItem != null)
             {
+                pbImagen.LoadCompleted += (s, ev) =>
+                {
+                    if (ev.Error != null)
+                    {
+                        pbImagen.ImageLocation = imagenDefault;
+                    }
+                };
                 pbImagen.ImageLocation = lbxURL.SelectedItem.ToString();
             }
-            else
-            {
-                //Si el artículo no tiene imagen o esttá rota la url, se muestra un placeholder
-                pbImagen.ImageLocation = "https://c.pxhere.com/images/47/83/d6e362ca869395f9db5b5a3d0659-1675158.png!d";
-            }
         }
+
 
         //Cierro el form de alta con el botón cancelar
         private void btCancelar_Click(object sender, EventArgs e)
@@ -296,7 +309,9 @@ namespace PresentacionForms
                 lbxURL.Items.Add(rutaCompletaArchivo);
             }
         }
-
-       
+        private void btDeleteImg_Click(object sender, EventArgs e)
+        {
+            lbxURL.Items.Remove(lbxURL.SelectedItem);
+        }
     }
 }

@@ -76,10 +76,10 @@
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbNombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbNombre.Location = new System.Drawing.Point(42, 132);
+            this.lbNombre.Location = new System.Drawing.Point(47, 165);
             this.lbNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(73, 20);
+            this.lbNombre.Size = new System.Drawing.Size(87, 25);
             this.lbNombre.TabIndex = 0;
             this.lbNombre.Text = "Nombre:";
             this.lbNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -89,10 +89,10 @@
             this.lbDescripcion.AutoSize = true;
             this.lbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbDescripcion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbDescripcion.Location = new System.Drawing.Point(42, 367);
+            this.lbDescripcion.Location = new System.Drawing.Point(47, 459);
             this.lbDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDescripcion.Name = "lbDescripcion";
-            this.lbDescripcion.Size = new System.Drawing.Size(104, 20);
+            this.lbDescripcion.Size = new System.Drawing.Size(120, 25);
             this.lbDescripcion.TabIndex = 1;
             this.lbDescripcion.Text = "Descripcion:";
             this.lbDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,10 +102,10 @@
             this.lbPrecio.AutoSize = true;
             this.lbPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbPrecio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbPrecio.Location = new System.Drawing.Point(42, 186);
+            this.lbPrecio.Location = new System.Drawing.Point(47, 232);
             this.lbPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPrecio.Name = "lbPrecio";
-            this.lbPrecio.Size = new System.Drawing.Size(62, 20);
+            this.lbPrecio.Size = new System.Drawing.Size(73, 25);
             this.lbPrecio.TabIndex = 2;
             this.lbPrecio.Text = "Precio:";
             this.lbPrecio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -113,32 +113,32 @@
             // txbNombre
             // 
             this.txbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txbNombre.Location = new System.Drawing.Point(181, 132);
-            this.txbNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNombre.Location = new System.Drawing.Point(204, 165);
+            this.txbNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbNombre.MaxLength = 20;
             this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(215, 26);
+            this.txbNombre.Size = new System.Drawing.Size(241, 30);
             this.txbNombre.TabIndex = 1;
             // 
             // txbDescripcion
             // 
             this.txbDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txbDescripcion.Location = new System.Drawing.Point(181, 365);
-            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbDescripcion.Location = new System.Drawing.Point(204, 456);
+            this.txbDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbDescripcion.MaxLength = 30;
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.Size = new System.Drawing.Size(215, 61);
+            this.txbDescripcion.Size = new System.Drawing.Size(241, 75);
             this.txbDescripcion.TabIndex = 5;
             // 
             // txbPrecio
             // 
             this.txbPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txbPrecio.Location = new System.Drawing.Point(181, 184);
-            this.txbPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbPrecio.Location = new System.Drawing.Point(204, 230);
+            this.txbPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbPrecio.MaxLength = 20;
             this.txbPrecio.Name = "txbPrecio";
-            this.txbPrecio.Size = new System.Drawing.Size(215, 26);
+            this.txbPrecio.Size = new System.Drawing.Size(241, 30);
             this.txbPrecio.TabIndex = 2;
             // 
             // panelSup
@@ -148,9 +148,9 @@
             this.panelSup.Controls.Add(this.PicBoxCerrar);
             this.panelSup.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSup.Location = new System.Drawing.Point(0, 0);
-            this.panelSup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelSup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelSup.Name = "panelSup";
-            this.panelSup.Size = new System.Drawing.Size(772, 26);
+            this.panelSup.Size = new System.Drawing.Size(868, 32);
             this.panelSup.TabIndex = 4;
             // 
             // picBoxMinimizar
@@ -158,10 +158,10 @@
             this.picBoxMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picBoxMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("picBoxMinimizar.Image")));
-            this.picBoxMinimizar.Location = new System.Drawing.Point(710, 4);
+            this.picBoxMinimizar.Location = new System.Drawing.Point(799, 5);
             this.picBoxMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBoxMinimizar.Name = "picBoxMinimizar";
-            this.picBoxMinimizar.Size = new System.Drawing.Size(23, 20);
+            this.picBoxMinimizar.Size = new System.Drawing.Size(26, 25);
             this.picBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxMinimizar.TabIndex = 2;
             this.picBoxMinimizar.TabStop = false;
@@ -172,10 +172,10 @@
             this.PicBoxCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PicBoxCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicBoxCerrar.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxCerrar.Image")));
-            this.PicBoxCerrar.Location = new System.Drawing.Point(738, 4);
+            this.PicBoxCerrar.Location = new System.Drawing.Point(830, 5);
             this.PicBoxCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PicBoxCerrar.Name = "PicBoxCerrar";
-            this.PicBoxCerrar.Size = new System.Drawing.Size(23, 20);
+            this.PicBoxCerrar.Size = new System.Drawing.Size(26, 25);
             this.PicBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicBoxCerrar.TabIndex = 4;
             this.PicBoxCerrar.TabStop = false;
@@ -185,10 +185,10 @@
             // 
             this.btAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(100)))), ((int)(((byte)(170)))));
             this.btAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAgregar.Location = new System.Drawing.Point(52, 542);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAgregar.Location = new System.Drawing.Point(58, 678);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAgregar.Name = "btAgregar";
-            this.btAgregar.Size = new System.Drawing.Size(153, 46);
+            this.btAgregar.Size = new System.Drawing.Size(172, 58);
             this.btAgregar.TabIndex = 7;
             this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = false;
@@ -199,10 +199,10 @@
             this.lbMarca.AutoSize = true;
             this.lbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbMarca.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbMarca.Location = new System.Drawing.Point(42, 242);
+            this.lbMarca.Location = new System.Drawing.Point(47, 302);
             this.lbMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMarca.Name = "lbMarca";
-            this.lbMarca.Size = new System.Drawing.Size(66, 20);
+            this.lbMarca.Size = new System.Drawing.Size(78, 25);
             this.lbMarca.TabIndex = 6;
             this.lbMarca.Text = "Marca :";
             this.lbMarca.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,10 +212,10 @@
             this.cbxMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbxMarca.FormattingEnabled = true;
             this.cbxMarca.IntegralHeight = false;
-            this.cbxMarca.Location = new System.Drawing.Point(181, 241);
-            this.cbxMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxMarca.Location = new System.Drawing.Point(204, 301);
+            this.cbxMarca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(215, 28);
+            this.cbxMarca.Size = new System.Drawing.Size(241, 33);
             this.cbxMarca.TabIndex = 3;
             // 
             // cbxCategoria
@@ -223,10 +223,10 @@
             this.cbxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.IntegralHeight = false;
-            this.cbxCategoria.Location = new System.Drawing.Point(181, 302);
-            this.cbxCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxCategoria.Location = new System.Drawing.Point(204, 378);
+            this.cbxCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(215, 28);
+            this.cbxCategoria.Size = new System.Drawing.Size(241, 33);
             this.cbxCategoria.TabIndex = 4;
             // 
             // lbCategoria
@@ -234,10 +234,10 @@
             this.lbCategoria.AutoSize = true;
             this.lbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbCategoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbCategoria.Location = new System.Drawing.Point(42, 304);
+            this.lbCategoria.Location = new System.Drawing.Point(47, 380);
             this.lbCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCategoria.Name = "lbCategoria";
-            this.lbCategoria.Size = new System.Drawing.Size(86, 20);
+            this.lbCategoria.Size = new System.Drawing.Size(103, 25);
             this.lbCategoria.TabIndex = 8;
             this.lbCategoria.Text = "Categoria:";
             this.lbCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -247,10 +247,10 @@
             this.btCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(100)))), ((int)(((byte)(170)))));
             this.btCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCancelar.Location = new System.Drawing.Point(243, 542);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCancelar.Location = new System.Drawing.Point(273, 678);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(153, 46);
+            this.btCancelar.Size = new System.Drawing.Size(172, 58);
             this.btCancelar.TabIndex = 8;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = false;
@@ -261,10 +261,10 @@
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbTitulo.Location = new System.Drawing.Point(308, 54);
+            this.lbTitulo.Location = new System.Drawing.Point(346, 68);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(184, 37);
+            this.lbTitulo.Size = new System.Drawing.Size(221, 45);
             this.lbTitulo.TabIndex = 10;
             this.lbTitulo.Text = "ALTA DE ITEM";
             // 
@@ -273,10 +273,10 @@
             this.lbImagenURL.AutoSize = true;
             this.lbImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbImagenURL.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbImagenURL.Location = new System.Drawing.Point(526, 374);
+            this.lbImagenURL.Location = new System.Drawing.Point(592, 468);
             this.lbImagenURL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbImagenURL.Name = "lbImagenURL";
-            this.lbImagenURL.Size = new System.Drawing.Size(119, 20);
+            this.lbImagenURL.Size = new System.Drawing.Size(140, 25);
             this.lbImagenURL.TabIndex = 11;
             this.lbImagenURL.Text = "Imagen (URL):";
             this.lbImagenURL.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,19 +284,19 @@
             // txbImagenURL
             // 
             this.txbImagenURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txbImagenURL.Location = new System.Drawing.Point(457, 396);
-            this.txbImagenURL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbImagenURL.Location = new System.Drawing.Point(514, 495);
+            this.txbImagenURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbImagenURL.MaxLength = 2000;
             this.txbImagenURL.Name = "txbImagenURL";
-            this.txbImagenURL.Size = new System.Drawing.Size(272, 26);
+            this.txbImagenURL.Size = new System.Drawing.Size(306, 30);
             this.txbImagenURL.TabIndex = 6;
             // 
             // pbImagen
             // 
-            this.pbImagen.Location = new System.Drawing.Point(457, 132);
-            this.pbImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbImagen.Location = new System.Drawing.Point(514, 165);
+            this.pbImagen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(272, 241);
+            this.pbImagen.Size = new System.Drawing.Size(306, 301);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 12;
             this.pbImagen.TabStop = false;
@@ -306,10 +306,10 @@
             this.lbCodigo.AutoSize = true;
             this.lbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lbCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbCodigo.Location = new System.Drawing.Point(47, 452);
+            this.lbCodigo.Location = new System.Drawing.Point(53, 565);
             this.lbCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCodigo.Name = "lbCodigo";
-            this.lbCodigo.Size = new System.Drawing.Size(66, 20);
+            this.lbCodigo.Size = new System.Drawing.Size(81, 25);
             this.lbCodigo.TabIndex = 13;
             this.lbCodigo.Text = "Codigo:";
             this.lbCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -317,21 +317,21 @@
             // txbCodigo
             // 
             this.txbCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txbCodigo.Location = new System.Drawing.Point(181, 448);
-            this.txbCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbCodigo.Location = new System.Drawing.Point(204, 560);
+            this.txbCodigo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbCodigo.MaxLength = 20;
             this.txbCodigo.Name = "txbCodigo";
-            this.txbCodigo.Size = new System.Drawing.Size(215, 26);
+            this.txbCodigo.Size = new System.Drawing.Size(241, 30);
             this.txbCodigo.TabIndex = 14;
             // 
             // lbxURL
             // 
             this.lbxURL.FormattingEnabled = true;
-            this.lbxURL.ItemHeight = 16;
-            this.lbxURL.Location = new System.Drawing.Point(457, 473);
-            this.lbxURL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbxURL.ItemHeight = 20;
+            this.lbxURL.Location = new System.Drawing.Point(514, 591);
+            this.lbxURL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbxURL.Name = "lbxURL";
-            this.lbxURL.Size = new System.Drawing.Size(272, 116);
+            this.lbxURL.Size = new System.Drawing.Size(306, 144);
             this.lbxURL.TabIndex = 15;
             this.lbxURL.SelectedIndexChanged += new System.EventHandler(this.lbxURL_SelectedIndexChanged);
             this.lbxURL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbxURL_KeyDown);
@@ -340,10 +340,10 @@
             // 
             this.btAddImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAddImg.Image = ((System.Drawing.Image)(resources.GetObject("btAddImg.Image")));
-            this.btAddImg.Location = new System.Drawing.Point(682, 426);
-            this.btAddImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAddImg.Location = new System.Drawing.Point(767, 532);
+            this.btAddImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAddImg.Name = "btAddImg";
-            this.btAddImg.Size = new System.Drawing.Size(47, 39);
+            this.btAddImg.Size = new System.Drawing.Size(53, 49);
             this.btAddImg.TabIndex = 16;
             this.btAddImg.UseVisualStyleBackColor = true;
             this.btAddImg.Click += new System.EventHandler(this.btAddImg_Click);
@@ -352,10 +352,10 @@
             // 
             this.btCarpeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCarpeta.Image = ((System.Drawing.Image)(resources.GetObject("btCarpeta.Image")));
-            this.btCarpeta.Location = new System.Drawing.Point(568, 426);
-            this.btCarpeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCarpeta.Location = new System.Drawing.Point(639, 532);
+            this.btCarpeta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btCarpeta.Name = "btCarpeta";
-            this.btCarpeta.Size = new System.Drawing.Size(47, 39);
+            this.btCarpeta.Size = new System.Drawing.Size(53, 49);
             this.btCarpeta.TabIndex = 17;
             this.btCarpeta.UseVisualStyleBackColor = true;
             this.btCarpeta.Click += new System.EventHandler(this.btCarpeta_Click);
@@ -364,12 +364,13 @@
             // 
             this.btDeleteImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btDeleteImg.Image = ((System.Drawing.Image)(resources.GetObject("btDeleteImg.Image")));
-            this.btDeleteImg.Location = new System.Drawing.Point(457, 426);
-            this.btDeleteImg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btDeleteImg.Location = new System.Drawing.Point(514, 532);
+            this.btDeleteImg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btDeleteImg.Name = "btDeleteImg";
-            this.btDeleteImg.Size = new System.Drawing.Size(47, 39);
+            this.btDeleteImg.Size = new System.Drawing.Size(53, 49);
             this.btDeleteImg.TabIndex = 18;
             this.btDeleteImg.UseVisualStyleBackColor = true;
+            this.btDeleteImg.Click += new System.EventHandler(this.btDeleteImg_Click);
             // 
             // errorProvNombre
             // 
@@ -393,11 +394,11 @@
             // 
             // AltaItemsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(57)))), ((int)(((byte)(113)))));
             this.CancelButton = this.btCancelar;
-            this.ClientSize = new System.Drawing.Size(772, 656);
+            this.ClientSize = new System.Drawing.Size(868, 820);
             this.Controls.Add(this.btDeleteImg);
             this.Controls.Add(this.btCarpeta);
             this.Controls.Add(this.btAddImg);
@@ -423,7 +424,7 @@
             this.Controls.Add(this.lbNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(25, 0);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "AltaItemsForm";
             this.ShowIcon = false;
