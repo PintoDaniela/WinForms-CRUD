@@ -209,6 +209,7 @@
             // 
             // cbxMarca
             // 
+            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbxMarca.FormattingEnabled = true;
             this.cbxMarca.IntegralHeight = false;
@@ -220,6 +221,7 @@
             // 
             // cbxCategoria
             // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.IntegralHeight = false;
